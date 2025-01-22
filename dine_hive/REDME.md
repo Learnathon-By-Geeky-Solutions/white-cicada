@@ -1,6 +1,5 @@
 # Dine Hive
 
-_______________________________________
 ## Daily Work
 ### Rawnak
 ### chinmoy
