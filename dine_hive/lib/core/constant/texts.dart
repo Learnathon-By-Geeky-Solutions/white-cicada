@@ -8,4 +8,6 @@ class AppText{
   static const String continueWithGoogle = 'Continue With Google';
   static const String newToDineHive = 'New to Dine Hive?';
   static const String signUp = 'Sign Up';
+  static const String alreadyHaveAnAccount = 'Already have an account? ';
+  static const String name = 'Name';
 }
