@@ -5,4 +5,7 @@ class AppText{
   static const String emailAddress = 'Email address';
   static const String password = 'Password';
   static const String forgotPassword = 'Forgot Password?';
+  static const String continueWithGoogle = 'Continue With Google';
+  static const String newToDineHive = 'New to Dine Hive?';
+  static const String signUp = 'Sign Up';
 }
