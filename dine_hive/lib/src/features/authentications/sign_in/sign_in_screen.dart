@@ -10,7 +10,6 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppSpacing appSpacing = AppSpacing();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(AppSpacing.pagePadding),
@@ -19,9 +18,9 @@ class SignInScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const LoginHeaderWidgets(),
-            Gap(appSpacing.screenHeight(context) * 0.05),
+            Gap(AppSpacing.screenHeight(context) * 0.05),
             const LoginFormWidgets(),
-            Gap(appSpacing.screenHeight(context) * 0.01),
+            Gap(AppSpacing.screenHeight(context) * 0.01),
             const LoginFooterWidget()
           ],
         ),

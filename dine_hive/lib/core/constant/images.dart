@@ -3,5 +3,5 @@ class AppImages{
 
 
   //sign in screen
- static const String googleLogo = 'asset/images/sign_in_screen/Google__G__logo.svg 1.png';
+ static const String googleLogo = 'asset/images/sign_in_screen/google_logo.png';
 }

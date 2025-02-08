@@ -10,7 +10,6 @@ class LoginFooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppSpacing appSpacing = AppSpacing();
     TextTheme textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
@@ -22,7 +21,7 @@ class LoginFooterWidget extends StatelessWidget {
                   text: AppText.signUp,
                   style: textTheme.bodyMedium!.copyWith(color: Colors.red))
             ])),
-        Gap(appSpacing.screenHeight(context) * 0.03),
+        Gap(AppSpacing.screenHeight(context) * 0.03),
         SizedBox(
           width: double.infinity,
           height: 55,
@@ -33,7 +32,7 @@ class LoginFooterWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(AppImages.googleLogo),
-                  Gap(appSpacing.screenWidth(context) * 0.05),
+                  Gap(AppSpacing.screenWidth(context) * 0.05),
                   Text(
                     AppText.continueWithGoogle,
                     style: textTheme.titleLarge!.copyWith(color: whiteColor),

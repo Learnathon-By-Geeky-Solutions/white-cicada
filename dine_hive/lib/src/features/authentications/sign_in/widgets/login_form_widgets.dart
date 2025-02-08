@@ -9,18 +9,20 @@ class LoginFormWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppSpacing appSpacing = AppSpacing();
     TextTheme textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
         const TextField(
+          keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
               prefixIcon: Icon(Icons.email), hintText: AppText.emailAddress),
         ),
-        Gap(appSpacing.screenHeight(context) * 0.02),
+        Gap(AppSpacing.screenHeight(context) * 0.02),
         const TextField(
           decoration: InputDecoration(
-              prefixIcon: Icon(Icons.lock), hintText: AppText.password),
+              prefixIcon: Icon(Icons.lock),
+              hintText: AppText.password,
+          ),
         ),
         Align(
           alignment: Alignment.centerRight,
