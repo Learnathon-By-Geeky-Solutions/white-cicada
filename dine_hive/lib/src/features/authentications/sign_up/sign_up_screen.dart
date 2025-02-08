@@ -11,18 +11,21 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.pagePadding),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SignUpHeaderWidgets(),
-            Gap(AppSpacing.screenHeight(context) * 0.05),
-            const SignUpFormWidgets(),
-            Gap(AppSpacing.screenHeight(context) * 0.01),
-            const SignUpFooterWidget()
-          ],
+      resizeToAvoidBottomInset: true,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.pagePadding),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SignUpHeaderWidgets(),
+              Gap(AppSpacing.screenHeight(context) * 0.05),
+              const SignUpFormWidgets(),
+              Gap(AppSpacing.screenHeight(context) * 0.01),
+              const SignUpFooterWidget()
+            ],
+          ),
         ),
       ),
     );

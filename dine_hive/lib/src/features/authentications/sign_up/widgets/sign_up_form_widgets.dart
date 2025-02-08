@@ -24,6 +24,7 @@ class SignUpFormWidgets extends StatelessWidget {
         ),
         Gap(AppSpacing.screenHeight(context) * 0.02),
         const TextField(
+          obscureText: true,
           decoration: InputDecoration(
             prefixIcon: Icon(Icons.lock),
             hintText: AppText.password,

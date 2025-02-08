@@ -10,7 +10,14 @@ class SignUpHeaderWidgets extends StatelessWidget {
     TextTheme textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
-        Image.asset(AppImages.appLogo),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.5,
+          child: Image.asset(
+            AppImages.appLogo,
+            fit: BoxFit.contain,
+            semanticLabel: 'Dine Hive Logo',
+          ),
+        ),
         Text(
           AppText.signUp,
           style: textTheme.headlineLarge!
