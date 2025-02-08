@@ -9,7 +9,7 @@ class AppEvaluatedButtonThemes {
     style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         foregroundColor: blackColor,
-        backgroundColor: welcomePageButtonColor,
+        backgroundColor: elevatedButtonColor,
         side: const BorderSide(color: blackColor)),
   );
 
@@ -18,7 +18,7 @@ class AppEvaluatedButtonThemes {
     style: ElevatedButton.styleFrom(
         shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         foregroundColor: blackColor,
-        backgroundColor: welcomePageButtonColorDarkMode,
+        backgroundColor: elevatedButtonColor,
         side: const BorderSide(color: whiteColor)),
   );
 }
