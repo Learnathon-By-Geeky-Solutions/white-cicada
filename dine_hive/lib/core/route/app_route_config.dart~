@@ -14,7 +14,7 @@ class AppRouteConfig {
           name: 'sign-in',
           path: '/',
           pageBuilder: (context, state) {
-            return const MaterialPage(child: SignInScreen());
+            return const MaterialPage(child: ForgetPassScreen());
           }),
 
     ],
