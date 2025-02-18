@@ -10,7 +10,6 @@ const elevatedButtonColor = Color(0xff193948);
 const textButtonColor = Color(0xffFF0000);
 
 const whiteColor = Color(0xffffffff);
-const redColor = Color(0xffff0000);
 const whiteShadeColor = Color(0xff938c8c);
 const blackColor = Color(0xff000000);
 const blackShadeColor = Color(0xff252525);
