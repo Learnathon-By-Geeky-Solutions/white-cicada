@@ -22,34 +22,30 @@ class HomeAppBar extends StatelessWidget {
           Positioned(
               top: 0, right: 0, child: Image.asset(AppImages.appBarBgPattern)),
           SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.pagePadding),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    icon: SvgPicture.asset(
-                      AppIcons.appDrawer,
-                    ),
-                    onPressed: () {
-                      scaffoldKey.currentState?.openDrawer(); // Open drawer
-                    },
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: SvgPicture.asset(
+                    AppIcons.appDrawer,
                   ),
-                  Row(
-                    children: [
-                      SvgPicture.asset(AppIcons.locationIcon),
-                      const Gap(5),
-                      const Text(AppText.findAndBookRestaurant),
-                    ],
-                  ),
-                  const CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg')),
-                  const Gap(1),
-                ],
-              ),
+                  onPressed: () {
+                    scaffoldKey.currentState?.openDrawer(); // Open drawer
+                  },
+                ),
+                Row(
+                  children: [
+                    SvgPicture.asset(AppIcons.locationIcon),
+                    const Gap(5),
+                    const Text(AppText.findAndBookRestaurant),
+                  ],
+                ),
+                const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg')),
+                const Gap(1),
+              ],
             ),
           )
         ],
