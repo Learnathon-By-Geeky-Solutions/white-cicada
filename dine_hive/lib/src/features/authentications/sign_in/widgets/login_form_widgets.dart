@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../core/constant/spacing.dart';
 import '../../../../../core/constant/texts.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
@@ -37,7 +38,9 @@ class LoginFormWidgets extends StatelessWidget {
           width: double.infinity,
           height: 55,
           child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.go('/home');
+              },
               child: Text(
                 AppText.signIn,
                 style: textTheme.titleLarge!.copyWith(color: whiteColor),

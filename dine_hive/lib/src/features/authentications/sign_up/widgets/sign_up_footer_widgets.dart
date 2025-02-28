@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../core/constant/images.dart';
 import '../../../../../core/constant/spacing.dart';
 import '../../../../../core/constant/texts.dart';
@@ -13,14 +14,17 @@ class SignUpFooterWidget extends StatelessWidget {
     TextTheme textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
-        Text.rich(TextSpan(
-            text: AppText.alreadyHaveAnAccount,
-            style: textTheme.bodyMedium!,
-            children: [
-              TextSpan(
-                  text: AppText.signIn,
-                  style: textTheme.bodyMedium!.copyWith(color: Colors.red))
-            ])),
+        InkWell(
+          onTap: ()=> context.go('/signup'),
+          child: Text.rich(TextSpan(
+              text: AppText.alreadyHaveAnAccount,
+              style: textTheme.bodyMedium!,
+              children: [
+                TextSpan(
+                    text: AppText.signIn,
+                    style: textTheme.bodyMedium!.copyWith(color: Colors.red))
+              ])),
+        ),
         Gap(AppSpacing.screenHeight(context) * 0.03),
         SizedBox(
           width: double.infinity,

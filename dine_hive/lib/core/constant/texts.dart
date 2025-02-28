@@ -14,4 +14,8 @@ class AppText{
   static const String cancel = 'Cancel';
   static const String sendEmail = 'Send Email';
   static const String forgetPass = 'Please enter your email address to receive a link to reset your password';
+
+  //Home Screen
+ static const String findAndBookRestaurant= 'Find & book Restaurant';
+
 }
