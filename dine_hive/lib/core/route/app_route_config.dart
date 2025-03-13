@@ -29,6 +29,12 @@ class AppRouteConfig {
           pageBuilder: (context, state) {
             return  const MaterialPage(child: ForgetPassScreen());
           }),
+      GoRoute(
+        name: 'home screen',
+          path: '/home',
+          pageBuilder: (context, state) {
+            return  const MaterialPage(child: HomeScreen());
+          }),
     ],
   );
 }
