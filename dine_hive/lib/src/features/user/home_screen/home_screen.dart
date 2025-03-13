@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import '../../../../core/constant/key.dart';
 import '../../../../core/constant/spacing.dart';
-import '../../../../core/theme/src/theme_extensions/color_palette.dart';
 import '../../../../core/widgets/offer_card.dart';
 import 'widgets/home_app_bar.dart';
 import 'widgets/home_drawer.dart';
@@ -20,10 +19,12 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             HomeAppBar(),
+            Gap(10),
             TextField(
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search), hintText: 'Search'),
             ),
+            Gap(20),
             OfferCard(),
           ],
         ),

@@ -28,7 +28,9 @@ class LoginFormWidgets extends StatelessWidget {
         Align(
           alignment: Alignment.centerRight,
           child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                context.go('/forgot_password');
+              },
               child: const Text(
                 AppText.forgotPassword,
                 style: TextStyle(color: blackShadeColor),
