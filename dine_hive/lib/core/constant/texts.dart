@@ -13,6 +13,7 @@ class AppText{
   static const String favourite = 'Favourite';
   static const String bookNow = 'Book Now';
   static const String popular = 'Popular';
+  static const String notPopular = 'Not Popular';
   static const String restName = 'Hotel City Inn.';
   static const String resetPass = 'Reset Password';
   static const String cancel = 'Cancel';

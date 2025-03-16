@@ -28,11 +28,17 @@ class AppRouteConfig {
           pageBuilder: (context, state) {
             return  const MaterialPage(child: ForgetPassScreen());
           }),
+      // GoRoute(
+      //     name: 'home screen',
+      //     path: '/home',
+      //     pageBuilder: (context, state) {
+      //       return  const MaterialPage(child: HomeScreen());
+      //     }),
       GoRoute(
           name: 'restaurant info screen',
           path: '/restaurant_info',
           pageBuilder: (context, state) {
-            return  const MaterialPage(child: RestaurantInfoScreen());
+            return  MaterialPage(child: RestaurantInfoScreen(restaurantId: '1',));
           }),
     ],
   );
