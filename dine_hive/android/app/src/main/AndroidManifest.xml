@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="dine_hive"
+        android:label="to_do_application"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
