@@ -10,6 +10,8 @@ class AppText{
   static const String signUp = 'Sign Up';
   static const String alreadyHaveAnAccount = 'Already have an account? ';
   static const String name = 'Name';
+  static const String favourite = 'Favourite';
+  static const String bookNow = 'Book Now';
   static const String popular = 'Popular';
   static const String restName = 'Hotel City Inn.';
   static const String resetPass = 'Reset Password';

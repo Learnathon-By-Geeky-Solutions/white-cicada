@@ -46,7 +46,7 @@ class _RestaurantInfoBodyWidgetState extends State<RestaurantInfoBodyWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const RatingStar(rating: 3.5),
+              const RatingStar(rating: 3),
               const Gap(8),
               const Text('3.5 Ratings', style: TextStyle(color: AppColors.whiteShadeColor, fontSize: 18, fontWeight: FontWeight.w600)),
               Gap(AppSpacing.screenWidth(context) * 0.10),
