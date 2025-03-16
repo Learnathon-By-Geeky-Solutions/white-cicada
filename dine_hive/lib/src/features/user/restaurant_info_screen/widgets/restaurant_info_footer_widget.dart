@@ -53,9 +53,11 @@ class _RestaurantInfoFooterWidgetState extends State<RestaurantInfoFooterWidget>
               controller: _scrollController,
               child: Text(
                 textAlign: TextAlign.justify,
-                widget.restaurant?.restaurantDescription ?? "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
-                style: textTheme.bodyMedium!
-                    .copyWith(fontWeight: FontWeight.w400, fontSize: 16),
+                widget.restaurant?.restaurantDescription ?? "No description available for this restaurant.",
+                style: textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                    ) ?? const TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
               ),
             ),
           ),

@@ -1,14 +1,14 @@
 class RestaurantModel {
-  String sId;
-  String restaurantName;
-  int restaurantCode;
-  String restaurantDescription;
-  String img;
-  bool isPopular;
-  List<String> listOfTable;
-  List<String> listOfFood;
-  List<double> ratings;
-  int orderQty;
+  final String sId;
+  final String restaurantName;
+  final int restaurantCode;
+  final String restaurantDescription;
+  final String img;
+  final bool isPopular;
+  final List<String> listOfTable;
+  final List<String> listOfFood;
+  final List<double> ratings;
+  final int orderQty;
 
   RestaurantModel(
       {required this.sId,
