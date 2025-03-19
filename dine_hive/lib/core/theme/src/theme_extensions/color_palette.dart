@@ -18,3 +18,7 @@ const blackShadeColor = Color(0xff252525);
 //welcome page button color
 const welcomePageButtonColor = Color(0xff193948);
 const welcomePageButtonColorDarkMode = Color(0xff193948);
+
+const buttonFrontColor = Color(0xffED9A47);
+const buttonBGColor = Color(0xffF8BE03);
+const orangeColor = Color(0xffED9A47);

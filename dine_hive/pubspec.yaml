@@ -39,8 +39,6 @@ dependencies:
   go_router: ^14.8.0
   dynamic_path_url_strategy: ^1.0.0
   gap: ^3.0.1
-  flutter_svg: ^2.0.17
-  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
@@ -69,8 +67,7 @@ flutter:
     - asset/images/logo/
     - asset/images/sign_in_screen/
     - asset/images/forget_pass/
-    - asset/images/home_screen/
-    - asset/icon/home_screen/
+    - asset/images/restaurant_info_screen/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
