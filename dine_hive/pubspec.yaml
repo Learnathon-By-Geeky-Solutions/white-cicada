@@ -39,6 +39,8 @@ dependencies:
   go_router: ^14.8.0
   dynamic_path_url_strategy: ^1.0.0
   gap: ^3.0.1
+  flutter_svg: ^2.0.17
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
