@@ -28,7 +28,9 @@ class LoginFormWidgets extends StatelessWidget {
         Align(
           alignment: Alignment.centerRight,
           child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                context.go('/forgot_password');
+              },
               child: const Text(
                 AppText.forgotPassword,
                 style: TextStyle(color: blackShadeColor),
@@ -38,7 +40,9 @@ class LoginFormWidgets extends StatelessWidget {
           width: double.infinity,
           height: 55,
           child: ElevatedButton(
-              onPressed: () => context.go('/restaurant_info'),
+              onPressed: () {
+                context.go('/home');
+              },
               child: Text(
                 AppText.signIn,
                 style: textTheme.titleLarge!.copyWith(color: whiteColor),
