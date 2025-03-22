@@ -1,7 +1,7 @@
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/constant/texts.dart';
 import 'package:flutter/material.dart';
-import '../../../../models/restaurant_model.dart';
+import '../../../../data/models/restaurant_model.dart';
 import 'custom_bottom_buttons.dart';
 
 class RestaurantInfoFooterWidget extends StatefulWidget {

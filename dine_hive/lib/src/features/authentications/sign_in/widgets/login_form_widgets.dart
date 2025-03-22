@@ -1,3 +1,4 @@
+import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -29,7 +30,7 @@ class LoginFormWidgets extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: TextButton(
               onPressed: () {
-                context.go('/forgot_password');
+                context.go(AppRouteConstant.forgotPasswordScreen);
               },
               child: const Text(
                 AppText.forgotPassword,
@@ -41,7 +42,7 @@ class LoginFormWidgets extends StatelessWidget {
           height: 55,
           child: ElevatedButton(
               onPressed: () {
-                context.go('/home');
+                context.go(AppRouteConstant.homeScreen);
               },
               child: Text(
                 AppText.signIn,
