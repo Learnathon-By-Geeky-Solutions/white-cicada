@@ -67,6 +67,7 @@ flutter:
     - asset/images/logo/
     - asset/images/sign_in_screen/
     - asset/images/forget_pass/
+    - asset/images/choose_table_screen/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

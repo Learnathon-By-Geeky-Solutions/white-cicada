@@ -18,3 +18,8 @@ const blackShadeColor = Color(0xff252525);
 //welcome page button color
 const welcomePageButtonColor = Color(0xff193948);
 const welcomePageButtonColorDarkMode = Color(0xff193948);
+
+//Choose Table Screen Page
+const Color availableColor = Color(0xFFfcf5d7);
+const Color bookedColor = Color(0xFFfe0001);
+const Color reservedColor = Color(0xFFa2f994);

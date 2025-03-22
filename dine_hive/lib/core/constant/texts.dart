@@ -14,4 +14,11 @@ class AppText{
   static const String cancel = 'Cancel';
   static const String sendEmail = 'Send Email';
   static const String forgetPass = 'Please enter your email address to receive a link to reset your password';
+
+  // Choose Table Screen Page
+  static const String chooseTable = 'Choose Table';
+  static const String avail = 'Available';
+  static const String book = 'Booked';
+  static const String reserve = 'Reserved';
+  static const String noData = 'No Data Found';
 }
