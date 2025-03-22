@@ -1,5 +1,7 @@
+import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../core/constant/spacing.dart';
 import '../../../../../core/constant/texts.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
@@ -27,7 +29,9 @@ class LoginFormWidgets extends StatelessWidget {
         Align(
           alignment: Alignment.centerRight,
           child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                context.go(AppRouteConstant.forgotPasswordScreen);
+              },
               child: const Text(
                 AppText.forgotPassword,
                 style: TextStyle(color: blackShadeColor),
@@ -37,7 +41,9 @@ class LoginFormWidgets extends StatelessWidget {
           width: double.infinity,
           height: 55,
           child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.go(AppRouteConstant.homeScreen);
+              },
               child: Text(
                 AppText.signIn,
                 style: textTheme.titleLarge!.copyWith(color: whiteColor),

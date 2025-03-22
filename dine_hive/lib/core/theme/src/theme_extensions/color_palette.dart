@@ -19,7 +19,13 @@ const blackShadeColor = Color(0xff252525);
 const welcomePageButtonColor = Color(0xff193948);
 const welcomePageButtonColorDarkMode = Color(0xff193948);
 
+<<<<<<< HEAD
 //Choose Table Screen Page
 const Color availableColor = Color(0xFFfcf5d7);
 const Color bookedColor = Color(0xFFfe0001);
 const Color reservedColor = Color(0xFFa2f994);
+=======
+const buttonFrontColor = Color(0xffED9A47);
+const buttonBGColor = Color(0xffF8BE03);
+const orangeColor = Color(0xffED9A47);
+>>>>>>> 340494a7da2a4396b61211cceed194ae9a00b40d
