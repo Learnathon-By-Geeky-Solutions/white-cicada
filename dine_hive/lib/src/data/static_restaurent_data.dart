@@ -1,4 +1,4 @@
-import '../models/restaurent_model.dart';
+import 'models/restaurent_model.dart';
 
 List<RestaurantModel> restaurantList = [
   RestaurantModel(

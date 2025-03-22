@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
 import '../../../../data/static_restaurent_data.dart';
-import '../../../../models/restaurent_model.dart';
+import '../../../../data/models/restaurent_model.dart';
 
 class ChooseTableScreenHeader extends StatefulWidget {
   const ChooseTableScreenHeader({super.key});

@@ -1,5 +1,5 @@
 import 'models/food_model.dart';
-import 'models/restaurant_model.dart';
+import 'models/restaurent_model.dart';
 
 List<RestaurantModel> restaurantList = [
   RestaurantModel(

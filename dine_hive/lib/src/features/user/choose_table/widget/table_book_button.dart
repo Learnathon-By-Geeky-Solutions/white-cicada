@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
-import '../../../../models/restaurent_table_model.dart';
+import '../../../../data/models/restaurent_table_model.dart';
 class TableBookButton extends StatelessWidget {
   final RestaurentTableModel table;
   final VoidCallback onPressed;

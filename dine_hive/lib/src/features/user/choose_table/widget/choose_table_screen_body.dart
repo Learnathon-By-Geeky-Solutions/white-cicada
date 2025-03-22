@@ -1,6 +1,6 @@
 import 'package:dine_hive/core/constant/texts.dart';
 import 'package:dine_hive/src/features/user/choose_table/widget/table_book_button.dart';
-import 'package:dine_hive/src/models/restaurent_table_model.dart';
+import 'package:dine_hive/src/data/models/restaurent_table_model.dart';
 import 'package:flutter/cupertino.dart';
 import '../../../../../core/constant/spacing.dart';
 import '../../../../data/static_restaurent_table_data.dart';
