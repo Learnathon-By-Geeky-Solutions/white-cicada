@@ -69,6 +69,7 @@ flutter:
     - asset/images/logo/
     - asset/images/sign_in_screen/
     - asset/images/forget_pass/
+    - asset/images/choose_table_screen/
     - asset/images/restaurant_info_screen/
     - asset/images/home_screen/
     - asset/icon/home_screen/

@@ -9,6 +9,10 @@ class AppImages {
   static const String restaurantImage =
       'asset/images/restaurant_info_screen/restaurant-photo.jpg';
 
+  //Choose Table Screen Page
+  static const String pattern = 'asset/images/choose_table_screen/Pattern.png';
+  static const String userImage = 'asset/images/choose_table_screen/user_img.png';
+
 //Home Screen
   static const String appBarBgPattern =
       'asset/images/home_screen/appbar_pattern.png';
