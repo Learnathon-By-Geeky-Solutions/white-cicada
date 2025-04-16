@@ -9,9 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class UserProfileScreen extends StatefulWidget {
-  const UserProfileScreen({super.key, this.restaurantId = 'user123'});
+  const UserProfileScreen({super.key, this.userId = 'user123'});
 
-  final String restaurantId;
+  final String userId;
 
   @override
   State<UserProfileScreen> createState() => _UserProfileScreenState();
@@ -71,10 +71,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
-          const Divider(
-            color: Colors.black,
-            thickness: 3,
-          ),
+          _buildDivider(),
           Gap(AppSpacing.screenHeight(context) * 0.02),
           MenuCardWidget(
               title: "Present Bookings",
@@ -91,10 +88,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               suffixIcon: Icons.confirmation_num_outlined,
               onTap: onTapCoupons),
           Gap(AppSpacing.screenHeight(context) * 0.02),
-          const Divider(
-            color: Colors.black,
-            thickness: 3,
-          ),
+          _buildDivider(),
           Gap(AppSpacing.screenHeight(context) * 0.02),
           MenuCardWidget(
               title: "Supports",
@@ -105,6 +99,13 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               title: "Logout", suffixIcon: Icons.logout, onTap: onTapLogOut),
         ],
       ),
+    );
+  }
+
+  Divider _buildDivider() {
+    return const Divider(
+      color: Colors.black,
+      thickness: 3,
     );
   }
 }
