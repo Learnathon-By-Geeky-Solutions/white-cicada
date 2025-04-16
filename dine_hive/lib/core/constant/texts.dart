@@ -17,6 +17,7 @@ class AppText{
   static const String restName = 'Hotel City Inn.';
   static const String resetPass = 'Reset Password';
   static const String cancel = 'Cancel';
+  static const String profile = 'Profile';
   static const String sendEmail = 'Send Email';
   static const String forgetPass = 'Please enter your email address to receive a link to reset your password';
 
