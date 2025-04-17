@@ -39,7 +39,6 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   @override
   Widget build(BuildContext context) {
     UserModel? userModel = getUserById('user123');
-
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: CustomBottomNav(
@@ -53,7 +52,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const ProfileAppBarWidget(),
+              ProfileAppBarWidget(userModel: userModel,),
               UserProfilePhotoWidget(
                 userModel: userModel,
               ),
