@@ -17,9 +17,6 @@ class ProfileAppBarWidget extends StatefulWidget {
 }
 
 class _ProfileAppBarWidgetState extends State<ProfileAppBarWidget> {
-  void _onTapBackButton() {
-    Navigator.pop(context);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +29,11 @@ class _ProfileAppBarWidgetState extends State<ProfileAppBarWidget> {
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            onPressed: _onTapBackButton,
+            onPressed: () {},
             icon: const Icon(
               Icons.arrow_back_ios_new_rounded,
               size: 26,
-              color: AppColors.blackColor,
+              color: AppColors.whiteColor,
             ),
           ),
           const Text(
