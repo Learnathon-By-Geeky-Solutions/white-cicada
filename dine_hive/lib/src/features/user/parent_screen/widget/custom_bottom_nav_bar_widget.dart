@@ -1,4 +1,4 @@
-import 'package:dine_hive/core/widgets/nav_items_widget.dart';
+import 'package:dine_hive/src/features/user/parent_screen/widget/nav_items_widget.dart';
 import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
 import 'package:flutter/material.dart';
 

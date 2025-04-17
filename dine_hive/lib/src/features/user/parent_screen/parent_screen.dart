@@ -1,7 +1,7 @@
 import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../../core/widgets/custom_bottom_nav_bar_widget.dart';
+import 'widget/custom_bottom_nav_bar_widget.dart';
 
 class ParentScreen extends StatelessWidget {
   const ParentScreen({super.key});
