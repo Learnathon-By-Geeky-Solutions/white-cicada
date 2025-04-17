@@ -1,27 +1,25 @@
+import 'package:dine_hive/src/data/models/food_model.dart';
+import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class FoodItemCard extends StatelessWidget {
-  final String imageUrl;
-  final String name;
-  final String description;
+  final FoodModel foodModel;
   final String restaurant;
+  final String description;
   final double rating;
-  final double price;
-
   const FoodItemCard({
     super.key,
-    required this.imageUrl,
-    required this.name,
-    required this.description,
+    required this.foodModel,
     required this.restaurant,
     required this.rating,
-    required this.price,
+    required this.description,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180, // Adjust width as needed
+      width: 180,
       margin: const EdgeInsets.symmetric(horizontal: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -38,7 +36,6 @@ class FoodItemCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Rating and Star Icon
           Row(
             children: [
               const Icon(Icons.star, color: Colors.amber, size: 18),
@@ -51,10 +48,9 @@ class FoodItemCard extends StatelessWidget {
           ),
           const SizedBox(height: 5),
 
-          // Food Image
           Center(
             child: Image.network(
-              imageUrl,
+              foodModel.imageUrl,
               height: 80,
               fit: BoxFit.cover,
             ),
@@ -64,7 +60,7 @@ class FoodItemCard extends StatelessWidget {
           // Food Name
           Expanded(
             child: Text(
-              name,
+              foodModel.name,
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -85,7 +81,7 @@ class FoodItemCard extends StatelessWidget {
 
           // Restaurant Name
           Text(
-            "at $restaurant",
+            "at ${restaurant}",
             style: const TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w500,
@@ -99,19 +95,24 @@ class FoodItemCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "\$${price.toStringAsFixed(2)}",
+                "\$${foodModel.price.toStringAsFixed(2)}",
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.orange,
                 ),
               ),
-              Container(
-                decoration: const BoxDecoration(
-                  color: Colors.orange,
-                  shape: BoxShape.circle,
+              GestureDetector(
+                onTap: (){
+                  context.read<CartScreenProvider>().addToCart(foodModel);
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.orange,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(Icons.add, color: Colors.white),
                 ),
-                child: const Icon(Icons.add, color: Colors.white),
               ),
             ],
           ),

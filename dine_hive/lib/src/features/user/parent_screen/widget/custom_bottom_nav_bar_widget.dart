@@ -1,6 +1,8 @@
+import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
 import 'package:dine_hive/src/features/user/parent_screen/widget/nav_items_widget.dart';
 import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CustomBottomNav extends StatelessWidget {
   final int selectedIndex;
@@ -31,14 +33,18 @@ class CustomBottomNav extends StatelessWidget {
             isSelected: selectedIndex == 1,
             onTap: () => parentScreenProvider.setNavBarScreen(1),
           ),
-          NavItemWidget(
-            icon: Icons.shopping_cart,
-            label: 'Cart',
-            isSelected: selectedIndex == 2,
-            badgeCount: 7,
-            onTap: () => parentScreenProvider.setNavBarScreen(2),
+          Consumer<CartScreenProvider>(
+            builder: (context, cartProvider, _) {
+              return NavItemWidget(
+                icon: Icons.shopping_cart,
+                label: 'Cart',
+                isSelected: selectedIndex == 2,
+                badgeCount: cartProvider.cartItem.length,
+                onTap: () => parentScreenProvider.setNavBarScreen(2),
 
-    ),
+              );
+            },
+          ),
           NavItemWidget(
             icon: Icons.qr_code_scanner_outlined,
             label: 'QR Scan',
