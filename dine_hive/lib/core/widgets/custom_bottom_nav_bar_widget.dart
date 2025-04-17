@@ -1,14 +1,14 @@
 import 'package:dine_hive/core/widgets/nav_items_widget.dart';
+import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNav extends StatelessWidget {
   final int selectedIndex;
-  final ValueChanged<int> onItemTap;
-
+  final ParentScreenProvider parentScreenProvider;
   const CustomBottomNav({
     super.key,
     required this.selectedIndex,
-    required this.onItemTap,
+    required this.parentScreenProvider,
   });
 
   @override
@@ -23,27 +23,28 @@ class CustomBottomNav extends StatelessWidget {
             icon: Icons.home,
             label: 'Home',
             isSelected: selectedIndex == 0,
-            onTap: () => onItemTap(0),
+            onTap: () => parentScreenProvider.setNavBarScreen(0),
           ),
           NavItemWidget(
             icon: Icons.person,
             label: 'Profile',
             isSelected: selectedIndex == 1,
-            onTap: () => onItemTap(1),
+            onTap: () => parentScreenProvider.setNavBarScreen(1),
           ),
           NavItemWidget(
             icon: Icons.shopping_cart,
             label: 'Cart',
             isSelected: selectedIndex == 2,
             badgeCount: 7,
-            onTap: () => onItemTap(2),
-          ),
+            onTap: () => parentScreenProvider.setNavBarScreen(2),
+
+    ),
           NavItemWidget(
             icon: Icons.qr_code_scanner_outlined,
             label: 'QR Scan',
             isSelected: selectedIndex == 3,
             showDot: false,
-            onTap: () => onItemTap(3),
+            onTap: () => parentScreenProvider.setNavBarScreen(3),
           ),
         ],
       ),
