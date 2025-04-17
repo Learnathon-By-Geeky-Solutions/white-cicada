@@ -39,10 +39,10 @@ class CustomBottomNav extends StatelessWidget {
             onTap: () => onItemTap(2),
           ),
           NavItemWidget(
-            icon: Icons.chat_bubble,
-            label: 'Messages',
+            icon: Icons.qr_code_scanner_outlined,
+            label: 'QR Scan',
             isSelected: selectedIndex == 3,
-            showDot: true,
+            showDot: false,
             onTap: () => onItemTap(3),
           ),
         ],

@@ -2,6 +2,7 @@ import 'package:dine_hive/src/features/authentications/forget_password/forget_pa
 import 'package:dine_hive/src/features/authentications/sign_up/sign_up_screen.dart';
 import 'package:dine_hive/src/features/user/choose_table/choose_table_screen.dart';
 import 'package:dine_hive/src/features/user/edit_user_profile_screen/edit_user_profile_screen.dart';
+import 'package:dine_hive/src/features/user/user_profile_screen/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:dine_hive/core/constant/texts.dart';
@@ -18,7 +19,7 @@ class AppRouteConfig {
           name: AppText.signIn,
           path: '/',
           pageBuilder: (context, state) {
-            return const MaterialPage(child: EditUserProfileScreen());
+            return const MaterialPage(child: UserProfileScreen());
           }),
       GoRoute(
           name: 'signup',
