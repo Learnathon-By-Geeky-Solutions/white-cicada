@@ -2,6 +2,7 @@ import 'package:dine_hive/src/features/authentications/forget_password/forget_pa
 import 'package:dine_hive/src/features/authentications/sign_up/sign_up_screen.dart';
 import 'package:dine_hive/src/features/user/choose_table/choose_table_screen.dart';
 import 'package:dine_hive/src/features/user/edit_user_profile_screen/edit_user_profile_screen.dart';
+import 'package:dine_hive/src/features/user/parent_screen/parent_screen.dart';
 import 'package:dine_hive/src/features/user/user_profile_screen/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -13,29 +14,29 @@ import 'package:dine_hive/src/features/user/restaurant_info_screen/restaurant_in
 
 class AppRouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: AppRouteConstant.initialRoute,
+    initialLocation: AppRouteConstant.parentScreen,
     routes: [
       GoRoute(
           name: AppText.signIn,
-          path: '/',
+          path: AppRouteConstant.initialRoute,
           pageBuilder: (context, state) {
             return const MaterialPage(child: UserProfileScreen());
           }),
       GoRoute(
-          name: 'signup',
-          path: '/signup',
+          name: AppText.signUp,
+          path: AppRouteConstant.signupScreen,
           pageBuilder: (context, state) {
             return const MaterialPage(child: SignUpScreen());
           }),
       GoRoute(
-          name: 'forgot password',
-          path: '/forgot_password',
+          name: AppRouteConstant.forgotPasswordScreen,
+          path: AppRouteConstant.forgotPasswordScreen,
           pageBuilder: (context, state) {
             return const MaterialPage(child: ForgetPassScreen());
           }),
       GoRoute(
-          name: 'choose table screen',
-          path: '/choose_table_screen',
+          name: AppRouteConstant.chooseTableScreen,
+          path: AppRouteConstant.chooseTableScreen,
           pageBuilder: (context, state) {
             return const MaterialPage(child: ChooseTableScreen());
           }),
@@ -67,7 +68,12 @@ class AppRouteConfig {
         path: AppRouteConstant.editProfileScreen,
         builder: (context, state) => const EditUserProfileScreen(),
       ),
-
+      GoRoute(
+          name: AppText.parentScreen,
+          path: AppRouteConstant.parentScreen,
+          pageBuilder: (context, state) {
+            return const MaterialPage(child: ParentScreen());
+          }),
     ],
   );
 }

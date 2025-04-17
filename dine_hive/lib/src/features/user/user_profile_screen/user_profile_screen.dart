@@ -1,5 +1,4 @@
 import 'package:dine_hive/core/constant/spacing.dart';
-import 'package:dine_hive/core/widgets/custom_bottom_nav_bar_widget.dart';
 import 'package:dine_hive/src/data/models/user_model.dart';
 import 'package:dine_hive/src/data/static_user_data.dart';
 import 'package:dine_hive/src/features/user/user_profile_screen/widgets/menu_card_widget.dart';
@@ -22,14 +21,6 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     return staticUser.userId == id ? staticUser : null;
   }
 
-  int selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-
   void onTapPresentBookings() {}
   void onTapBookingHistory() {}
   void onTapCoupons() {}
@@ -41,10 +32,6 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     UserModel? userModel = getUserById('user123');
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: CustomBottomNav(
-          selectedIndex: selectedIndex,
-          onItemTap: _onItemTapped,
-        ),
         body: Padding(
           padding:
               const EdgeInsets.symmetric(horizontal: AppSpacing.pagePadding),
@@ -104,7 +91,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   Divider _buildDivider() {
     return const Divider(
       color: Colors.black,
-      thickness: 3,
+      thickness: 1,
     );
   }
 }
