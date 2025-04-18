@@ -73,6 +73,7 @@ flutter:
     - asset/images/restaurant_info_screen/
     - asset/images/home_screen/
     - asset/icon/home_screen/
+    - asset/icon/payment_gateway_screen/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

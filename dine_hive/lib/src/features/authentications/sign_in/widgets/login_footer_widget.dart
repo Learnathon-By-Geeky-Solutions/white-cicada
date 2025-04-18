@@ -1,3 +1,4 @@
+import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -15,7 +16,7 @@ class LoginFooterWidget extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: ()=> context.go('/signup'),
+          onTap: ()=> context.go(AppRouteConstant.signupScreen),
           child: Text.rich(TextSpan(
               text: AppText.newToDineHive,
               style: textTheme.bodyMedium!,

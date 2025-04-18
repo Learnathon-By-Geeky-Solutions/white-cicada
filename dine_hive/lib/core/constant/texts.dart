@@ -36,4 +36,10 @@ class AppText{
   //Home Screen
   static const String findAndBookRestaurant= 'Find & book Restaurant';
   static const String parentScreen= 'Parent Screen';
+
+
+  static const String paymentGatewaySelectionScreen = 'Payment Gateway Selection Screen';
+  static const String mobileBanking = 'Mobile Banking';
+  static const String cardPayment = 'Card Payment';
+  static const String payNow = 'Pay Now';
 }

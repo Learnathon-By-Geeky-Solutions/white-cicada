@@ -42,7 +42,7 @@ class LoginFormWidgets extends StatelessWidget {
           height: 55,
           child: ElevatedButton(
               onPressed: () {
-                context.go(AppRouteConstant.homeScreen);
+                context.go(AppRouteConstant.parentScreen);
               },
               child: Text(
                 AppText.signIn,
