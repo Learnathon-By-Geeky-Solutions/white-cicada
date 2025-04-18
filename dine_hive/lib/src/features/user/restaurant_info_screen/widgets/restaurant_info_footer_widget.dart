@@ -1,8 +1,7 @@
-import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/constant/texts.dart';
+import 'package:dine_hive/core/widgets/custom_bottom_bar.dart';
 import 'package:dine_hive/src/data/models/restaurent_model.dart';
 import 'package:flutter/material.dart';
-import 'custom_bottom_buttons.dart';
 
 class RestaurantInfoFooterWidget extends StatefulWidget {
   const RestaurantInfoFooterWidget({super.key, this.restaurant});
@@ -65,31 +64,11 @@ class _RestaurantInfoFooterWidgetState extends State<RestaurantInfoFooterWidget>
           AnimatedOpacity(
             opacity: _showBottomSheet ? 1.0 : 0.0,
             duration: const Duration(milliseconds: 300),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: AppSpacing.screenWidth(context) * 0.9,
-                padding: const EdgeInsets.all(16),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(20), bottom: Radius.circular(20)),
-                  boxShadow: [BoxShadow(blurRadius: 5, color: Colors.black26)],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomBottomButtons(textTheme: textTheme,title: AppText.favourite, pIcon: Icons.favorite,),
-                      CustomBottomButtons(textTheme: textTheme,title: AppText.bookNow, sIcon: Icons.arrow_forward_ios_outlined,),
-                    ]
-                  ),
-                )
-              ),
-            ),
+            child: CustomBottomBarWidget(textTheme: textTheme, title1: AppText.favourite, title2: AppText.bookNow, pIcon: Icons.favorite, sIcon: Icons.arrow_forward_ios_outlined),
           ),
         ],
       ),
     );
   }
 }
+

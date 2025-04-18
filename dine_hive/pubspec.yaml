@@ -41,6 +41,7 @@ dependencies:
   gap: ^3.0.1
   flutter_svg: ^2.0.17
   provider: ^6.1.2
+  confetti: ^0.8.0
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +75,7 @@ flutter:
     - asset/images/home_screen/
     - asset/icon/home_screen/
     - asset/icon/payment_gateway_screen/
+    - asset/images/payment_successful_screen/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
