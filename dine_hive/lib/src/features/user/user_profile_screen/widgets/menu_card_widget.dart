@@ -20,6 +20,7 @@ class MenuCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme textTheme = Theme.of(context).textTheme;
     return InkWell(
       onTap: _onTapMenuCard,
       child: Row(
@@ -28,7 +29,7 @@ class MenuCardWidget extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
+            style: textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w600),
           ),
           Icon(suffixIcon, color: Colors.black),
         ],
