@@ -31,4 +31,11 @@ class AppImages {
       'asset/icon/payment_gateway_screen/mastercard_svg.svg';
   static const String rocketLogo =
       'asset/icon/payment_gateway_screen/rocket_png.png';
+
+  //Payment Successful Screen
+  static const String BGPattern =
+      'asset/images/payment_successful_screen/BGpattern.png';
+  static const String successImage =
+      'asset/images/payment_successful_screen/img.png';
+
 }

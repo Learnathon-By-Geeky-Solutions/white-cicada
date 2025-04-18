@@ -23,29 +23,24 @@ class _ProfileAppBarWidgetState extends State<ProfileAppBarWidget> {
     return SizedBox(
       width: AppSpacing.screenWidth(context),
       height: 80,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              size: 26,
-              color: AppColors.whiteColor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              AppText.profile,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: AppColors.blackColor,
+              ),
             ),
-          ),
-          const Text(
-            AppText.profile,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: AppColors.blackColor,
-            ),
-          ),
-          _buildPopupSettingMenuButton(),
-        ],
+            _buildPopupSettingMenuButton(),
+          ],
+        ),
       ),
     );
   }
