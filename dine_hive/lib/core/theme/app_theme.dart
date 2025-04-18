@@ -9,14 +9,14 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
       primaryColor: primaryColor,
       brightness: Brightness.light,
-      textTheme: AppTextThemes.lightTextTheme,
+      textTheme: AppTextTheme.lightTextTheme,
       scaffoldBackgroundColor: bgColor,
       elevatedButtonTheme: AppEvaluatedButtonThemes.lightEvaluatedButtonTheme,
       inputDecorationTheme:AppInputDecorationTheme.lightInputDecorationTheme
   );
   static ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
-      textTheme: AppTextThemes.lightTextTheme,
+      textTheme: AppTextTheme.lightTextTheme,
       elevatedButtonTheme: AppEvaluatedButtonThemes.darkEvaluatedButtonTheme,
       inputDecorationTheme:AppInputDecorationTheme.darkInputDecorationTheme
   );
