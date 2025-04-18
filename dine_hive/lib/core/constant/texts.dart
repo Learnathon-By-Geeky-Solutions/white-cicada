@@ -42,4 +42,6 @@ class AppText{
   static const String mobileBanking = 'Mobile Banking';
   static const String cardPayment = 'Card Payment';
   static const String payNow = 'Pay Now';
+  static const String backToHome = 'Back To Home';
+  static const String trackOrder = 'Track Order';
 }
