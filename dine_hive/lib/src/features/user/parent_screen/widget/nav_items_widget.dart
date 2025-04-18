@@ -32,7 +32,7 @@ class NavItemWidget extends StatelessWidget {
     double fontSize = screenWidth * 0.035;
     double horizontalPadding = screenWidth * 0.05;
     double verticalPadding = screenHeight * 0.015;
-    double badgeSize = screenWidth * 0.038;
+    double badgeSize = screenWidth * 0.045;
     double dotSize = screenWidth * 0.025;
     double spacing = screenWidth * 0.0125;
 
@@ -61,7 +61,7 @@ class NavItemWidget extends StatelessWidget {
                     child: Container(
                       width: badgeSize,
                       height: badgeSize,
-                      padding: EdgeInsets.all(badgeSize * 0.2),
+                      padding: EdgeInsets.all(badgeSize * 0.02),
                       decoration: const BoxDecoration(
                         color: Colors.orange,
                         shape: BoxShape.circle,
@@ -70,8 +70,7 @@ class NavItemWidget extends StatelessWidget {
                         fit: BoxFit.scaleDown,
                         child: Text(
                           '$badgeCount',
-                          style: TextStyle(
-                            fontSize: badgeSize,
+                          style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),

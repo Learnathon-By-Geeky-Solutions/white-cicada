@@ -91,13 +91,11 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           final food = foodList[index];
                           return FoodItemCard(
-                            imageUrl: food.imageUrl,
-                            name: food.name,
                             description:
                                 "100 gr chicken + tomato + cheese Lettuce",
                             restaurant: "SpiceHotel",
-                            rating: 3.8, // You can update with real data
-                            price: food.price,
+                            rating: 3.8,
+                            foodModel: food, // You can update with real data
                           );
                         },
                       )),

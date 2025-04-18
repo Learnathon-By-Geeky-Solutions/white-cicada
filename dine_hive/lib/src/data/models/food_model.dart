@@ -6,6 +6,7 @@ class FoodModel {
   final String imageUrl;
   final double price;
   final double discount;
+  int quantity;
 
   FoodModel({
     required this.foodId,
@@ -15,6 +16,7 @@ class FoodModel {
     required this.imageUrl,
     required this.price,
     required this.discount,
+    this.quantity = 1,
   });
 
   // Convert to JSON
