@@ -3,6 +3,7 @@ import 'package:dine_hive/core/theme/app_theme.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/home_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
+import 'package:dine_hive/src/data/providers/payment_option_provider.dart';
 import 'package:dynamic_path_url_strategy/dynamic_path_url_strategy.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,9 @@ void main() {
       create: (_) => ParentScreenProvider(),
     ),
     ChangeNotifierProvider<CartScreenProvider>(
-      create: (_) => CartScreenProvider(),
+      create: (_) => CartScreenProvider(),),
+    ChangeNotifierProvider<PaymentOptionProvider>(
+      create: (_) => PaymentOptionProvider(),
     ),
   ], child: const MyApp()));
 }
