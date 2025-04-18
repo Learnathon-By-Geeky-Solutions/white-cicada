@@ -1,5 +1,7 @@
+import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../core/constant/spacing.dart';
 import '../../../../../core/constant/texts.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
@@ -35,7 +37,7 @@ class SignUpFormWidgets extends StatelessWidget {
           width: double.infinity,
           height: 55,
           child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => context.go(AppRouteConstant.initialRoute),
               child: Text(
                 AppText.signUp,
                 style: textTheme.titleLarge!.copyWith(color: whiteColor),

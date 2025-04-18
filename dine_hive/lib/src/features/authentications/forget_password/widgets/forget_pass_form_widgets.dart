@@ -1,5 +1,7 @@
+import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../core/constant/spacing.dart';
 import '../../../../../core/constant/texts.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
@@ -25,14 +27,14 @@ class ForgetPassFormWidgets extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {context.go(AppRouteConstant.initialRoute);},
                   child: Text(
                     AppText.cancel,
                     style: textTheme.titleMedium!.copyWith(color: redColor),
                   )
               ),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {context.go(AppRouteConstant.initialRoute);},
                   child: Row(
                     children: [
                       Text(
