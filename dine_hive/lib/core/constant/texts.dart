@@ -42,4 +42,9 @@ class AppText{
   static const String mobileBanking = 'Mobile Banking';
   static const String cardPayment = 'Card Payment';
   static const String payNow = 'Pay Now';
+  static const String backToHome = 'Back To Home';
+  static const String trackOrder = 'Track Order';
+  static const String paymentSuccessful = 'Payment Successfully';
+  static const String thankYouForYourOrder = 'Thank you for your order';
+  static const String afterPaymentInstructions = '"Your order is now being proceed. We will let you know once it is ready. Check the status of the your order."';
 }
