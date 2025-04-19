@@ -16,7 +16,7 @@ class LoginFooterWidget extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: ()=> context.go(AppRouteConstant.signupScreen),
+          onTap: ()=> context.push(AppRouteConstant.signupScreen),
           child: Text.rich(TextSpan(
               text: AppText.newToDineHive,
               style: textTheme.bodyMedium!,

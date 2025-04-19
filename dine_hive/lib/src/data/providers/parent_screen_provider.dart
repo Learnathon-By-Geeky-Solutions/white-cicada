@@ -5,6 +5,8 @@ import 'package:dine_hive/src/features/user/user_profile_screen/user_profile_scr
 import 'package:flutter/cupertino.dart';
 
 class ParentScreenProvider extends ChangeNotifier{
+
+  /// initialize  & getting all the pages in parent screen and selected index
   final List<Widget> _allPages= [
     const HomeScreen(),
     const UserProfileScreen(),
@@ -14,7 +16,9 @@ class ParentScreenProvider extends ChangeNotifier{
   List get allPages => _allPages;
   int _selectedIndex = 0;
   int get selectedIndex => _selectedIndex;
-  void setNavBarScreen(int tappedIndex){
+
+  /// updating parent screen body
+  void updateNavBarScreen(int tappedIndex){
     _selectedIndex = tappedIndex;
     notifyListeners();
   }

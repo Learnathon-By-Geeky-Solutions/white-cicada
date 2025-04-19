@@ -2,11 +2,10 @@ import 'dart:math';
 import 'package:dine_hive/core/constant/images.dart';
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/constant/texts.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
-import '../../../../data/static_restaurent_data.dart';
+import '../../../../data/static_data.dart';
 import '../../../../data/models/restaurent_model.dart';
 
 class ChooseTableScreenHeader extends StatefulWidget {
@@ -58,7 +57,7 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
               Container(
                 height: height*0.15,
                 width: width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 clipBehavior: Clip.hardEdge,
@@ -69,7 +68,7 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                   alignment: Alignment.centerLeft,
                   child: Text(AppText.chooseTable, style: textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.bold)),),
               Gap(width*0.03),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // Available
@@ -79,11 +78,11 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                         radius: 8,
                         backgroundColor: availableColor, // Light yellow
                       ),
-                      const SizedBox(width: 5),
-                      const Text(AppText.avail),
+                      SizedBox(width: 5),
+                      Text(AppText.avail),
                     ],
                   ),
-                  const SizedBox(width: 15), // Space between statuses
+                  SizedBox(width: 15), // Space between statuses
                   // Booked
                   Row(
                     children: [
@@ -91,11 +90,11 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                         radius: 8,
                         backgroundColor: bookedColor, // Red
                       ),
-                      const SizedBox(width: 5),
-                      const Text(AppText.book),
+                      SizedBox(width: 5),
+                      Text(AppText.book),
                     ],
                   ),
-                  const SizedBox(width: 15), // Space between statuses
+                  SizedBox(width: 15), // Space between statuses
                   // Reserved
                   Row(
                     children: [
@@ -103,8 +102,8 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                         radius: 8,
                         backgroundColor: reservedColor, // Light green
                       ),
-                      const SizedBox(width: 5),
-                      const Text(AppText.reserve),
+                      SizedBox(width: 5),
+                      Text(AppText.reserve),
                     ],
                   ),
                 ],

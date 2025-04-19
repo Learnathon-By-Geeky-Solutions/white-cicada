@@ -30,7 +30,7 @@ class LoginFormWidgets extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: TextButton(
               onPressed: () {
-                context.go(AppRouteConstant.forgotPasswordScreen);
+                context.push(AppRouteConstant.forgotPasswordScreen);
               },
               child: const Text(
                 AppText.forgotPassword,

@@ -29,3 +29,7 @@ const buttonFrontColor = Color(0xffED9A47);
 const buttonBGColor = Color(0xffF8BE03);
 const orangeColor = Color(0xffED9A47);
 
+
+//home screen
+const homeBodyTextColor = Color(0xff3B3B3B);
+

@@ -49,5 +49,5 @@ class AppTextTheme {
       fontWeight: FontWeight.w400,
     ),
   );
-  static TextTheme darkTextTheme = TextTheme();
+  static TextTheme darkTextTheme = const TextTheme();
 }

@@ -37,7 +37,7 @@ class SignUpFormWidgets extends StatelessWidget {
           width: double.infinity,
           height: 55,
           child: ElevatedButton(
-              onPressed: () => context.go(AppRouteConstant.initialRoute),
+              onPressed: () => context.push(AppRouteConstant.initialRoute),
               child: Text(
                 AppText.signUp,
                 style: textTheme.titleLarge!.copyWith(color: whiteColor),

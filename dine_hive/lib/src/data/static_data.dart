@@ -481,6 +481,10 @@ List<FoodModel> foodList = [
 
 final List<Map<String, String>> popularCategories = [
   {
+    "name": "All",
+    "image": "",
+  },
+  {
     "name": "Burger",
     "image":
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUNBZ4MzsbblFrfjrDHM3VYcJmJoPAFTSWvMCuM_vaBzYauX42gdChNeY1wGdgFcI1x5w&usqp=CAU"
