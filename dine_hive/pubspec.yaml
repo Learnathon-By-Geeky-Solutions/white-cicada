@@ -42,6 +42,7 @@ dependencies:
   flutter_svg: ^2.0.17
   provider: ^6.1.2
   confetti: ^0.8.0
+  fluttertoast: ^8.2.12
 
 dev_dependencies:
   flutter_test:

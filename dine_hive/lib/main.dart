@@ -3,6 +3,7 @@ import 'package:dine_hive/core/theme/app_theme.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/confetti_provider.dart';
 import 'package:dine_hive/src/data/providers/home_screen_provider.dart';
+import 'package:dine_hive/src/data/providers/order_provider.dart';
 import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/payment_option_provider.dart';
 import 'package:dine_hive/src/features/user/payment_successful_screen/widgets/payment_successful_animation_widget.dart';
@@ -10,8 +11,9 @@ import 'package:dynamic_path_url_strategy/dynamic_path_url_strategy.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main()async {
   setPathUrlStrategy();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider<HomeScreenProvider>(
       create: (_) => HomeScreenProvider(),
@@ -27,6 +29,9 @@ void main() {
     ChangeNotifierProvider<ConfettiProvider>(
       create: (_) => ConfettiProvider(),
       child: const PaymentSuccessfulAnimationWidget(),
+    ),
+    ChangeNotifierProvider<OrderProvider>(
+      create: (_) => OrderProvider(),
     ),
   ], child: const MyApp()));
 }

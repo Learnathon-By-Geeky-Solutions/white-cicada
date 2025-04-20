@@ -48,7 +48,8 @@ class HomeScreen extends StatelessWidget {
                     SpecialOfferWidget(
                       homeScreenProvider: homeScreenProvider,
                     ),
-                
+                    const Gap(10),
+
                     /// food Category selection
                     CategorySelectionMenu(
                       homeScreenProvider: homeScreenProvider,
@@ -56,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                 
                     ///Showing & filtering food Item
                     const ShowFoodItemPart(),
-                    SizedBox(height: AppSpacing.screenHeight(context)*0.02,),
+                    const Gap(10),
 
 
                     ///Showing Popular Hotel

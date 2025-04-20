@@ -1,21 +1,33 @@
 import 'package:dine_hive/src/data/models/food_model.dart';
 import 'package:flutter/cupertino.dart';
 
-class CartScreenProvider extends ChangeNotifier{
+class CartScreenProvider extends ChangeNotifier {
+  /// Cart item list
+  final List<FoodModel> _cartItem = [];
 
-  ///initialized cart list & get
-  final List<FoodModel>  _cartIem = [];
-  List get cartItem => _cartIem;
+  /// Public getter for cart items
+  List<FoodModel> get cartItem => _cartItem;
 
-  /// here added item in cart
+  /// Check if an item is already in the cart
+  bool isInCart(FoodModel item) {
+    return _cartItem.any((element) => element.foodId == item.foodId);
+  }
+
+  /// Add item to cart if not already in it
   void addToCart(FoodModel item) {
-    if (_cartIem.any((element) => element.foodId == item.foodId)) {
+    if (isInCart(item)) {
       debugPrint('${item.name} is already in the cart.');
       return;
     }
-    _cartIem.add(item);
-    debugPrint('Added: ${_cartIem.last.name}');
+    _cartItem.add(item);
+    debugPrint('Added: ${item.name}');
     notifyListeners();
   }
 
+  /// Remove item from cart by foodId
+  void removeFromCart(FoodModel item) {
+    _cartItem.removeWhere((element) => element.foodId == item.foodId);
+    debugPrint('Removed: ${item.name}');
+    notifyListeners();
+  }
 }

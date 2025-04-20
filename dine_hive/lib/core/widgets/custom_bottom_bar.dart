@@ -1,6 +1,9 @@
 import 'package:dine_hive/core/constant/spacing.dart';
+import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:dine_hive/core/widgets/custom_bottom_buttons.dart';
+import 'package:dine_hive/src/features/user/choose_table/choose_table_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomBottomBarWidget extends StatelessWidget {
   const CustomBottomBarWidget({
@@ -27,7 +30,8 @@ class CustomBottomBarWidget extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           decoration: const BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20), bottom: Radius.circular(20)),
+            borderRadius: BorderRadius.vertical(
+                top: Radius.circular(20), bottom: Radius.circular(20)),
             boxShadow: [BoxShadow(blurRadius: 5, color: Colors.black26)],
           ),
           child: Padding(
@@ -35,12 +39,22 @@ class CustomBottomBarWidget extends StatelessWidget {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomBottomButtons(textTheme: textTheme,title: title1, pIcon: pIcon),
-                  CustomBottomButtons(textTheme: textTheme,title: title2, sIcon: sIcon),
-                ]
-            ),
-          )
-      ),
+                  CustomBottomButtons(
+                    title: title1,
+                    prefixIcon: pIcon,
+                    onTappedAction: () {},
+                  ),
+                  GestureDetector(
+                    onTap: ()=>context.push(AppRouteConstant.chooseTableScreen),
+                    child: CustomBottomButtons(
+                      title: title2,
+                      suffixIcon: sIcon,
+                      onTappedAction: () {
+                      },
+                    ),
+                  ),
+                ]),
+          )),
     );
   }
 }

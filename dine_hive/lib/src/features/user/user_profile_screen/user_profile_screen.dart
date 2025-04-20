@@ -39,7 +39,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ProfileAppBarWidget(userModel: userModel,),
+              ProfileAppBarWidget(
+                userModel: userModel,
+              ),
               UserProfilePhotoWidget(
                 userModel: userModel,
               ),

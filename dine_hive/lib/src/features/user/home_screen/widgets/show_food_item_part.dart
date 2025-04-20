@@ -26,7 +26,7 @@ class ShowFoodItemPart extends StatelessWidget {
                 return FoodItemCard(
                   description: "100 gr chicken + tomato + cheese Lettuce",
                   restaurant: restaurant.restaurantName,
-                  rating: 3.8,
+                  rating: homeScreenProvider.calculateAverageRating(restaurant.ratings),
                   foodModel: food, showAddCart: false,
                 );
               },

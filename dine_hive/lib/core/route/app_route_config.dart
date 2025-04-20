@@ -3,6 +3,7 @@ import 'package:dine_hive/src/features/authentications/sign_in/sign_in_screen.da
 import 'package:dine_hive/src/features/authentications/sign_up/sign_up_screen.dart';
 import 'package:dine_hive/src/features/user/choose_table/choose_table_screen.dart';
 import 'package:dine_hive/src/features/user/edit_user_profile_screen/edit_user_profile_screen.dart';
+import 'package:dine_hive/src/features/user/order_screen/order_screen.dart';
 import 'package:dine_hive/src/features/user/parent_screen/parent_screen.dart';
 import 'package:dine_hive/src/features/user/payment_gateway_selection_screen/payment_gateway_selection_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ import 'package:dine_hive/src/features/user/restaurant_info_screen/restaurant_in
 
 class AppRouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: AppRouteConstant.initialRoute,
+    initialLocation: AppRouteConstant.orderScreen,
     routes: [
       GoRoute(
           name: AppText.signIn,
@@ -69,6 +70,12 @@ class AppRouteConfig {
           path: AppRouteConstant.paymentGatewaySelectionScreen,
           pageBuilder: (context, state) {
             return const MaterialPage(child: PaymentGatewaySelectionScreen());
+          }),
+      GoRoute(
+          name: AppRouteConstant.orderScreen,
+          path: AppRouteConstant.orderScreen,
+          pageBuilder: (context, state) {
+            return const MaterialPage(child: OrderScreen());
           }),
     ],
   );
