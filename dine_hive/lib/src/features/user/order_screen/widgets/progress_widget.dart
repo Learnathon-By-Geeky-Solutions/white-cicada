@@ -24,7 +24,7 @@ class ProgressWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                     color:
                     orderProvider.currentIndex >= index
-                        ? redColor
+                        ? AppColors.redColor
                         : const Color(0xff1E1E1E).withOpacity(0.12),
                     borderRadius: BorderRadius.circular(8),
                   ),

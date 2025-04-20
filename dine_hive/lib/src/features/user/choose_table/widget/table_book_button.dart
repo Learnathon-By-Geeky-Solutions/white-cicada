@@ -4,15 +4,15 @@ import '../../../../data/models/restaurent_table_model.dart';
 class TableBookButton extends StatelessWidget {
   final RestaurentTableModel table;
   final VoidCallback onPressed;
-  TableBookButton({required this.table, required this.onPressed});
+  const TableBookButton({super.key, required this.table, required this.onPressed});
   Color _getButtonColor() {
     switch (table.tableStatus.toLowerCase()) {
       case 'reserved':
-        return reservedColor;
+        return AppColors.reservedColor;
       case 'booked':
-        return bookedColor;
+        return AppColors.bookedColor;
       default:
-        return availableColor;
+        return AppColors.availableColor;
     }
   }
 

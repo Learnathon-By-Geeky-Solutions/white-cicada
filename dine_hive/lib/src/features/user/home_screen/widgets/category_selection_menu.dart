@@ -28,8 +28,8 @@ class CategorySelectionMenu extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 6),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: redColor, width: 2),
-                  color: isSelected ? textFiledFillColor : Colors.transparent,
+                  border: Border.all(color: AppColors.redColor, width: 2),
+                  color: isSelected ? AppColors.textFiledFillColor : Colors.transparent,
                 ),
                 child: Row(
                   children: [
@@ -45,7 +45,7 @@ class CategorySelectionMenu extends StatelessWidget {
                     Text(
                       category["name"]!,
                       style: const TextStyle(
-                        color: blackColor,
+                        color: AppColors.blackColor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

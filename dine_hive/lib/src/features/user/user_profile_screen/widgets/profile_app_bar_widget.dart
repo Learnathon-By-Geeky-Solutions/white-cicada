@@ -4,8 +4,7 @@ import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:dine_hive/src/data/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/theme/src/theme_extensions/color_palette.dart'
-    as AppColors;
+import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
 
 class ProfileAppBarWidget extends StatefulWidget {
   const ProfileAppBarWidget({super.key, this.userModel});

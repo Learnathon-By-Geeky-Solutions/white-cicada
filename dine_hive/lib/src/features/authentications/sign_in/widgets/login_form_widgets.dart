@@ -34,7 +34,7 @@ class LoginFormWidgets extends StatelessWidget {
               },
               child: const Text(
                 AppText.forgotPassword,
-                style: TextStyle(color: blackShadeColor),
+                style: TextStyle(color: AppColors.blackShadeColor),
               )),
         ),
         SizedBox(
@@ -46,7 +46,7 @@ class LoginFormWidgets extends StatelessWidget {
               },
               child: Text(
                 AppText.signIn,
-                style: textTheme.titleLarge!.copyWith(color: whiteColor),
+                style: textTheme.titleLarge!.copyWith(color: AppColors.whiteColor),
               )),
         ),
       ],

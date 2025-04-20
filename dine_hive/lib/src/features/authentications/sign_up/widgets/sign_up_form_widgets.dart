@@ -40,7 +40,7 @@ class SignUpFormWidgets extends StatelessWidget {
               onPressed: () => context.push(AppRouteConstant.initialRoute),
               child: Text(
                 AppText.signUp,
-                style: textTheme.titleLarge!.copyWith(color: whiteColor),
+                style: textTheme.titleLarge!.copyWith(color: AppColors.whiteColor),
               )),
         ),
       ],

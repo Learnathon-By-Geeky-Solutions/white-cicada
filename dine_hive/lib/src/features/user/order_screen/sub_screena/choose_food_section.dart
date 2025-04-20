@@ -4,9 +4,9 @@ import 'package:dine_hive/src/data/providers/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../../core/utils/toast_messages.dart';
+import '../../../../../core/utils/utils.dart';
 import '../../../../../core/widgets/food_item_card.dart';
 import '../../../../data/providers/cart_screen_provider.dart';
-import '../../../../data/providers/home_screen_provider.dart';
 import '../../../../data/static_data.dart';
 
 class ChooseFoodSection extends StatelessWidget {
@@ -33,13 +33,10 @@ class ChooseFoodSection extends StatelessWidget {
               final restaurant = restaurantList.firstWhere(
                 (restaurant) => restaurant.sId == foodList[index].restaurantId,
               );
-              final homeScreenProvider =
-                  Provider.of<HomeScreenProvider>(context);
               return FoodItemCard(
                 description: "100 gr chicken + tomato + cheese Lettuce",
                 restaurant: restaurant.restaurantName,
-                rating: homeScreenProvider
-                    .calculateAverageRating(restaurant.ratings),
+                rating: Utils.calculateAverageRating(restaurant.ratings),
                 foodModel: foodList[index],
                 showAddCart: true,
               );
@@ -69,7 +66,7 @@ class ChooseFoodSection extends StatelessWidget {
                   title: 'Order Now',
                   suffixIcon: Icons.keyboard_arrow_right_outlined,
                   buttonColor:
-                      cartProvider.cartItem.isEmpty ? whiteShadeColor : null,
+                      cartProvider.cartItem.isEmpty ? AppColors.whiteShadeColor : null,
                   onTappedAction: () {
                     cartProvider.cartItem.isEmpty
                         ? ToastService.showSnackbar(

@@ -8,17 +8,17 @@ class AppEvaluatedButtonThemes {
   static final lightEvaluatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-        foregroundColor: blackColor,
-        backgroundColor: elevatedButtonColor,
-        side: const BorderSide(color: blackColor)),
+        foregroundColor: AppColors.blackColor,
+        backgroundColor: AppColors.elevatedButtonColor,
+        side: const BorderSide(color: AppColors.blackColor)),
   );
 
   //Dark mode Evaluated Button Theme
   static final darkEvaluatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
         shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-        foregroundColor: blackColor,
-        backgroundColor: elevatedButtonColor,
-        side: const BorderSide(color: whiteColor)),
+        foregroundColor: AppColors.blackColor,
+        backgroundColor: AppColors.elevatedButtonColor,
+        side: const BorderSide(color: AppColors.whiteColor)),
   );
 }

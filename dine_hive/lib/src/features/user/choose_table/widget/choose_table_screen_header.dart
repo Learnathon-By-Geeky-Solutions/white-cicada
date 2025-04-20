@@ -76,7 +76,7 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                     children: [
                       CircleAvatar(
                         radius: 8,
-                        backgroundColor: availableColor, // Light yellow
+                        backgroundColor: AppColors.availableColor, // Light yellow
                       ),
                       SizedBox(width: 5),
                       Text(AppText.avail),
@@ -88,7 +88,7 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                     children: [
                       CircleAvatar(
                         radius: 8,
-                        backgroundColor: bookedColor, // Red
+                        backgroundColor: AppColors.bookedColor, // Red
                       ),
                       SizedBox(width: 5),
                       Text(AppText.book),
@@ -100,7 +100,7 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                     children: [
                       CircleAvatar(
                         radius: 8,
-                        backgroundColor: reservedColor, // Light green
+                        backgroundColor: AppColors.reservedColor, // Light green
                       ),
                       SizedBox(width: 5),
                       Text(AppText.reserve),

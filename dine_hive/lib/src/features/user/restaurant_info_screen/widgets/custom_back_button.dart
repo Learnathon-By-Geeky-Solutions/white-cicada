@@ -1,5 +1,5 @@
 import 'package:dine_hive/core/constant/spacing.dart';
-import 'package:dine_hive/core/theme/src/theme_extensions/color_palette.dart' as AppColors;
+import 'package:dine_hive/core/theme/src/theme_extensions/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

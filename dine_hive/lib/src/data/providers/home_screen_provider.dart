@@ -70,11 +70,4 @@ class HomeScreenProvider extends ChangeNotifier {
       return matchesCategory && matchesSearch;
     }).toList();
   }
-
-  ///  get average rating
-  double calculateAverageRating(List<double> ratings) {
-    if (ratings.isEmpty) return 0.0;
-    double total = ratings.reduce((a, b) => a + b);
-    return total / ratings.length;
-  }
 }

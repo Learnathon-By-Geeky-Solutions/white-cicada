@@ -88,7 +88,7 @@ class _EditDetailsFormWidgetState extends State<EditDetailsFormWidget> {
                 onPressed: _onTapSaveButton,
                 child: Text(
                   AppText.save,
-                  style: textTheme.titleLarge!.copyWith(color: whiteColor),
+                  style: textTheme.titleLarge!.copyWith(color: AppColors.whiteColor),
                 )),
           ),
         ],

@@ -40,7 +40,7 @@ class LoginFooterWidget extends StatelessWidget {
                   Gap(AppSpacing.screenWidth(context) * 0.05),
                   Text(
                     AppText.continueWithGoogle,
-                    style: textTheme.titleLarge!.copyWith(color: whiteColor),
+                    style: textTheme.titleLarge!.copyWith(color: AppColors.whiteColor),
                   ),
                 ],
               )),

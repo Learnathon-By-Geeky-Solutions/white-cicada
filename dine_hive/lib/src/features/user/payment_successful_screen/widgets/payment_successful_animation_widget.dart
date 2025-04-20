@@ -45,7 +45,7 @@ class _PaymentSuccessfulAnimationWidgetState
           width: AppSpacing.screenWidth(context) * 0.6,
           decoration: const BoxDecoration(
             shape: BoxShape.rectangle,
-            color: textFiledFillColor,
+            color: AppColors.textFiledFillColor,
           ),
           child: Image.asset(
             AppImages.successImage,

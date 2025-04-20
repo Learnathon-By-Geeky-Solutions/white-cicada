@@ -1,3 +1,4 @@
+import 'package:dine_hive/core/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +27,7 @@ class ShowFoodItemPart extends StatelessWidget {
                 return FoodItemCard(
                   description: "100 gr chicken + tomato + cheese Lettuce",
                   restaurant: restaurant.restaurantName,
-                  rating: homeScreenProvider.calculateAverageRating(restaurant.ratings),
+                  rating: Utils.calculateAverageRating(restaurant.ratings),
                   foodModel: food, showAddCart: false,
                 );
               },
