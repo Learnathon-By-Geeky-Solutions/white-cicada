@@ -43,6 +43,7 @@ dependencies:
   provider: ^6.1.2
   confetti: ^0.8.0
   fluttertoast: ^8.2.12
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +78,7 @@ flutter:
     - asset/icon/home_screen/
     - asset/icon/payment_gateway_screen/
     - asset/images/payment_successful_screen/
+    - asset/images/cart_screen/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

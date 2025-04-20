@@ -1,9 +1,12 @@
 import 'package:dine_hive/core/constant/spacing.dart';
+import 'package:dine_hive/core/constant/texts.dart';
 import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:dine_hive/core/widgets/custom_bottom_buttons.dart';
+import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
 import 'package:dine_hive/src/features/user/choose_table/choose_table_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class CustomBottomBarWidget extends StatelessWidget {
   const CustomBottomBarWidget({
@@ -40,16 +43,18 @@ class CustomBottomBarWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomBottomButtons(
-                    title: title1,
+                    title: AppText.favourite,
                     prefixIcon: pIcon,
                     onTappedAction: () {},
                   ),
                   GestureDetector(
-                    onTap: ()=>context.push(AppRouteConstant.chooseTableScreen),
+                    onTap: () =>
+                        context.push(AppRouteConstant.chooseTableScreen),
                     child: CustomBottomButtons(
-                      title: title2,
+                      title: AppText.bookNow,
                       suffixIcon: sIcon,
                       onTappedAction: () {
+                        context.push(AppRouteConstant.chooseTableScreen);
                       },
                     ),
                   ),

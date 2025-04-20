@@ -94,7 +94,7 @@ class FoodItemCard extends StatelessWidget {
             Text(
               description,
               style: textTheme.bodySmall?.copyWith(
-                color: homeBodyTextColor,
+                color: AppColors.homeBodyTextColor,
                 fontWeight: FontWeight.w500,
               ),
               maxLines: 2,
@@ -107,7 +107,7 @@ class FoodItemCard extends StatelessWidget {
             Text(
               "at $restaurant",
               style: textTheme.bodySmall?.copyWith(
-                color: homeBodyTextColor,
+                color: AppColors.homeBodyTextColor,
                 fontWeight: FontWeight.w700,
               ),
               maxLines: 1,
@@ -183,7 +183,7 @@ class CardAddRemoveButton extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
-            color: isInCart ? redColor : Colors.orange,
+            color: isInCart ? AppColors.redColor : Colors.orange,
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(8),
           ),

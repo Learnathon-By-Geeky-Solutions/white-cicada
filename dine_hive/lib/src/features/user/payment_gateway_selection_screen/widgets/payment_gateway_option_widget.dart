@@ -57,7 +57,7 @@ class _PaymentGatewayOptionWidgetState
             onPressed: () => _onTapPayButton(context),
             child: Text(
               AppText.payNow,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(color: whiteColor),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(color: AppColors.whiteColor),
             ),
           ),
         ),
@@ -78,10 +78,10 @@ class _PaymentGatewayOptionWidgetState
           height: AppSpacing.screenHeight(context) * 0.15,
           width: AppSpacing.screenWidth(context),
           decoration: BoxDecoration(
-            color: isSelected ? textFiledFillColor : whiteColor,
+            color: isSelected ? AppColors.textFiledFillColor : AppColors.whiteColor,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: isSelected ? orangeColor : Colors.transparent,
+              color: isSelected ? AppColors.orangeColor : Colors.transparent,
               width: 3,
             ),
           ),
@@ -92,7 +92,7 @@ class _PaymentGatewayOptionWidgetState
               children: [
                 Text(
                   title,
-                  style: const TextStyle(color: blackColor, fontSize: 16),
+                  style: const TextStyle(color: AppColors.blackColor, fontSize: 16),
                 ),
                 logoWidget,
               ],

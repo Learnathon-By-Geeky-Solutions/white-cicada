@@ -10,7 +10,7 @@ import '../../../../core/widgets/food_item_card.dart';
 import '../../../../core/widgets/popular_hotel_card.dart';
 import '../../../data/models/restaurent_model.dart';
 import '../../../data/providers/home_screen_provider.dart';
-import '../../../data/static_data.dart';
+import '../../../data/dummy_data/static_data.dart';
 import 'widgets/home_app_bar.dart';
 import 'widgets/home_drawer.dart';
 import 'widgets/show_food_item_part.dart';
@@ -58,7 +58,6 @@ class HomeScreen extends StatelessWidget {
                     ///Showing & filtering food Item
                     const ShowFoodItemPart(),
                     const Gap(10),
-
 
                     ///Showing Popular Hotel
                     const PopularHotelPart()

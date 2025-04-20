@@ -38,4 +38,6 @@ class AppImages {
   static const String successImage =
       'asset/images/payment_successful_screen/img.png';
 
+  //cart images
+  static const orderPattern = 'asset/images/cart_screen/Pattern.png';
 }

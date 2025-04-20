@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 class AppTheme {
   AppTheme._();
   static ThemeData lightTheme = ThemeData(
-      primaryColor: primaryColor,
+      primaryColor:AppColors.primaryColor,
       brightness: Brightness.light,
       textTheme: AppTextTheme.lightTextTheme,
-      scaffoldBackgroundColor: bgColor,
+      scaffoldBackgroundColor: AppColors.bgColor,
       elevatedButtonTheme: AppEvaluatedButtonThemes.lightEvaluatedButtonTheme,
       inputDecorationTheme:AppInputDecorationTheme.lightInputDecorationTheme
   );

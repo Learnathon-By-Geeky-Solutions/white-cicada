@@ -33,7 +33,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
             height: 40,
             width: 40,
             decoration: BoxDecoration(
-              color: buttonFrontColor,
+              color: AppColors.buttonFrontColor,
               shape: BoxShape.circle,
               border: Border.all(color: Colors.white, width: 2),
             ),

@@ -41,7 +41,7 @@ class SpecialOfferWidget extends StatelessWidget {
                 height: 10,
                 decoration: BoxDecoration(
                   color: homeScreenProvider.currentIndex == index
-                      ? primaryColor
+                      ? AppColors.primaryColor
                       : const Color(0xff1E1E1E).withOpacity(0.12),
                   borderRadius: BorderRadius.circular(8),
                 ),

@@ -36,22 +36,22 @@ class OfferCard extends StatelessWidget {
               Text(
                 'Special Offer\non SpiceHotel',
                 style: textTheme.titleLarge!.copyWith(
-                    color: whiteColor, fontWeight: FontWeight.bold),
+                    color: AppColors.whiteColor, fontWeight: FontWeight.bold),
               ),
               Text(
                 'We are here with the best\ndeserts intown.',
                 style: textTheme.bodySmall!.copyWith(
-                  color: whiteColor,
+                  color: AppColors.whiteColor,
                 ),
               ),
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all(whiteColor),
+                  backgroundColor: WidgetStateProperty.all(AppColors.whiteColor),
                   side: WidgetStateProperty.all(BorderSide.none),
                 ),
                 onPressed: () {},
                 child:  Text('Book Now',style: textTheme.bodySmall!.copyWith(
-                  color: redColor,
+                  color: AppColors.redColor,
                 ),),
               )
             ],

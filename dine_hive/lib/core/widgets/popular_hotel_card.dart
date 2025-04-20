@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/spacing.dart';
 import '../theme/src/theme_extensions/color_palette.dart';
-import '../../src/data/static_data.dart';
+import '../../src/data/dummy_data/static_data.dart';
 
 class PopularHotelCard extends StatelessWidget {
   const PopularHotelCard({
@@ -14,12 +14,12 @@ class PopularHotelCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 5),
       decoration: BoxDecoration(
-          color: whiteColor,
+          color: AppColors.whiteColor,
           borderRadius: BorderRadius.circular(7),
           boxShadow: [
             BoxShadow(
                 offset:const Offset(1, 1),
-                color: blackColor.withOpacity(0.12)
+                color: AppColors.blackColor.withOpacity(0.12)
             )
           ]
       ),

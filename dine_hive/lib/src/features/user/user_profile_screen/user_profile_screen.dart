@@ -1,6 +1,6 @@
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/src/data/models/user_model.dart';
-import 'package:dine_hive/src/data/static_user_data.dart';
+import 'package:dine_hive/src/data/dummy_data/static_user_data.dart';
 import 'package:dine_hive/src/features/user/user_profile_screen/widgets/menu_card_widget.dart';
 import 'package:dine_hive/src/features/user/user_profile_screen/widgets/profile_app_bar_widget.dart';
 import 'package:dine_hive/src/features/user/user_profile_screen/widgets/user_profile_photo_widget.dart';

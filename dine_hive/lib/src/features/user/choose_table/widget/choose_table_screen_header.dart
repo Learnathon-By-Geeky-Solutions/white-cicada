@@ -4,9 +4,11 @@ import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/constant/texts.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
-import '../../../../data/static_data.dart';
+import '../../../../data/dummy_data/static_data.dart';
 import '../../../../data/models/restaurent_model.dart';
+import '../../../../data/providers/cart_screen_provider.dart';
 
 class ChooseTableScreenHeader extends StatefulWidget {
   const ChooseTableScreenHeader({super.key});
@@ -18,14 +20,14 @@ class ChooseTableScreenHeader extends StatefulWidget {
 class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
   RestaurantModel? getRestaurantById(String id, List<RestaurantModel> restaurants) {
     try {
-      return restaurants.firstWhere((restaurant) => restaurant.sId == id);
+      return restaurants.firstWhere((restaurant) => restaurant.restaurantId == id);
     } catch (e) {
       return null;
     }
   }
   @override
   Widget build(BuildContext context) {
-    RestaurantModel? restaurants = getRestaurantById('1', restaurantList);
+    RestaurantModel? restaurants = getRestaurantById(Provider.of<CartScreenProvider>(context).restaurantId, restaurantList);
     double height = AppSpacing.screenHeight(context);
     double width = AppSpacing.screenWidth(context);
     TextTheme textTheme = Theme.of(context).textTheme;
@@ -76,7 +78,7 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                     children: [
                       CircleAvatar(
                         radius: 8,
-                        backgroundColor: availableColor, // Light yellow
+                        backgroundColor: AppColors.availableColor, // Light yellow
                       ),
                       SizedBox(width: 5),
                       Text(AppText.avail),
@@ -88,7 +90,7 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                     children: [
                       CircleAvatar(
                         radius: 8,
-                        backgroundColor: bookedColor, // Red
+                        backgroundColor: AppColors.bookedColor, // Red
                       ),
                       SizedBox(width: 5),
                       Text(AppText.book),
@@ -100,7 +102,7 @@ class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
                     children: [
                       CircleAvatar(
                         radius: 8,
-                        backgroundColor: reservedColor, // Light green
+                        backgroundColor: AppColors.reservedColor, // Light green
                       ),
                       SizedBox(width: 5),
                       Text(AppText.reserve),

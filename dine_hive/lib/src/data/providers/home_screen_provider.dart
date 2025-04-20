@@ -3,7 +3,7 @@ import 'package:dine_hive/src/data/models/food_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 
-import '../static_data.dart';
+import '../dummy_data/static_data.dart';
 
 class HomeScreenProvider extends ChangeNotifier {
   /// Home screen page controlling for hotel ad
@@ -69,12 +69,5 @@ class HomeScreenProvider extends ChangeNotifier {
 
       return matchesCategory && matchesSearch;
     }).toList();
-  }
-
-  ///  get average rating
-  double calculateAverageRating(List<double> ratings) {
-    if (ratings.isEmpty) return 0.0;
-    double total = ratings.reduce((a, b) => a + b);
-    return total / ratings.length;
   }
 }

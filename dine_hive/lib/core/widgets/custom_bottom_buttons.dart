@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../theme/src/theme_extensions/color_palette.dart' as AppColors;
+import '../theme/src/theme_extensions/color_palette.dart';
 
 class CustomBottomButtons extends StatelessWidget {
   const CustomBottomButtons({

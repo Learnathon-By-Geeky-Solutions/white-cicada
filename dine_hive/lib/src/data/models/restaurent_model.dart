@@ -1,5 +1,5 @@
 class RestaurantModel {
-  final String sId;
+  final String restaurantId;
   final String restaurantName;
   final int restaurantCode;
   final String restaurantDescription;
@@ -11,7 +11,7 @@ class RestaurantModel {
   final int orderQty;
 
   RestaurantModel(
-      {required this.sId,
+      {required this.restaurantId,
       required this.restaurantName,
       required this.restaurantCode,
       required this.restaurantDescription,
