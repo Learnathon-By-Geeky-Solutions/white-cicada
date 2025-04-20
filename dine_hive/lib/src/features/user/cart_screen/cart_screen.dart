@@ -14,9 +14,7 @@ class CartScreen extends StatelessWidget {
       child: Column(
         children: [
           CustomAppBarWidget(appBarTitle: 'Your cart'),
-          Expanded(child: Column(
-
-          ))
+          Expanded(child: Column())
         ],
       ),
     )));

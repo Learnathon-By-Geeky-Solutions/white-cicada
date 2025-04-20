@@ -1,30 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../theme/src/theme_extensions/color_palette.dart'
-    as AppColors;
+import '../theme/src/theme_extensions/color_palette.dart' as AppColors;
 
 class CustomBottomButtons extends StatelessWidget {
   const CustomBottomButtons({
     super.key,
-    required this.textTheme,
     required this.title,
-    this.sIcon,
-    this.pIcon,
+    this.suffixIcon,
+    this.prefixIcon,
+    required this.onTappedAction,
+    this.buttonColor,
   });
 
-  final TextTheme textTheme;
   final String title;
-  final IconData? sIcon;
-  final IconData? pIcon;
+  final IconData? suffixIcon;
+  final IconData? prefixIcon;
+  final VoidCallback onTappedAction;
+  final Color? buttonColor;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    TextTheme textTheme = Theme.of(context).textTheme;
+    return GestureDetector(
+      onTap: () {
+        onTappedAction();
+      },
+      child: Container(
         height: 60,
-        decoration: const BoxDecoration(
-          color: AppColors.textFiledFillColor,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+        decoration: BoxDecoration(
+          color: buttonColor??AppColors.textFiledFillColor,
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -33,21 +39,26 @@ class CustomBottomButtons extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
-                pIcon,
+                prefixIcon,
                 color: AppColors.buttonFrontColor,
                 size: 30,
               ),
               const Gap(5),
-              Text(title, style: const TextStyle(color: AppColors.blackColor, fontSize: 14, fontWeight: FontWeight.w600),),
+              Text(
+                title,
+                style:
+                    textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w600),
+              ),
               const Gap(5),
               Icon(
-                sIcon,
-                color: AppColors.buttonFrontColor,
+                suffixIcon,
+                color: buttonColor??AppColors.buttonFrontColor,
                 size: 30,
               ),
             ],
           ),
         ),
+      ),
     );
   }
 }

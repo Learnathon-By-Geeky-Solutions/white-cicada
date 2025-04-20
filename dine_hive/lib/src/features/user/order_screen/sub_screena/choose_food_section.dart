@@ -1,0 +1,86 @@
+import 'package:dine_hive/core/theme/src/theme_extensions/color_palette.dart';
+import 'package:dine_hive/core/widgets/custom_bottom_buttons.dart';
+import 'package:dine_hive/src/data/providers/order_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../../../../core/utils/toast_messages.dart';
+import '../../../../../core/widgets/food_item_card.dart';
+import '../../../../data/providers/cart_screen_provider.dart';
+import '../../../../data/providers/home_screen_provider.dart';
+import '../../../../data/static_data.dart';
+
+class ChooseFoodSection extends StatelessWidget {
+  const ChooseFoodSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    TextTheme textTheme = Theme.of(context).textTheme;
+    final cartProvider = context.watch<CartScreenProvider>();
+    return Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(bottom: 80),
+          child: GridView.builder(
+            padding: const EdgeInsets.only(top: 10),
+            itemCount: foodList.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              childAspectRatio: 0.64,
+            ),
+            itemBuilder: (context, index) {
+              final restaurant = restaurantList.firstWhere(
+                (restaurant) => restaurant.sId == foodList[index].restaurantId,
+              );
+              final homeScreenProvider =
+                  Provider.of<HomeScreenProvider>(context);
+              return FoodItemCard(
+                description: "100 gr chicken + tomato + cheese Lettuce",
+                restaurant: restaurant.restaurantName,
+                rating: homeScreenProvider
+                    .calculateAverageRating(restaurant.ratings),
+                foodModel: foodList[index],
+                showAddCart: true,
+              );
+            },
+          ),
+        ),
+
+        ///Bottom Button
+        Positioned(
+          bottom: 10,
+          left: 10,
+          right: 10,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Provider.of<OrderProvider>(context, listen: false)
+                      .updatePage(1);
+                },
+                child: Text(
+                  "Skip for now",
+                  style: textTheme.bodyMedium,
+                ),
+              ),
+              CustomBottomButtons(
+                  title: 'Order Now',
+                  suffixIcon: Icons.keyboard_arrow_right_outlined,
+                  buttonColor:
+                      cartProvider.cartItem.isEmpty ? whiteShadeColor : null,
+                  onTappedAction: () {
+                    cartProvider.cartItem.isEmpty
+                        ? ToastService.showSnackbar(
+                            context, "Select at least one")
+                        : Provider.of<OrderProvider>(context, listen: false)
+                            .updatePage(1);
+                  }),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
