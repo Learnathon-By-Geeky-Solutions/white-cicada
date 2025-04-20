@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
 import '../../../../data/providers/home_screen_provider.dart';
-import '../../../../data/static_data.dart';
+import '../../../../data/dummy_data/static_data.dart';
 
 class CategorySelectionMenu extends StatelessWidget {
   const CategorySelectionMenu({

@@ -3,7 +3,7 @@ import 'package:dine_hive/core/theme/app_theme.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/confetti_provider.dart';
 import 'package:dine_hive/src/data/providers/home_screen_provider.dart';
-import 'package:dine_hive/src/data/providers/order_provider.dart';
+import 'package:dine_hive/src/data/providers/order_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/payment_option_provider.dart';
 import 'package:dine_hive/src/features/user/payment_successful_screen/widgets/payment_successful_animation_widget.dart';
@@ -30,8 +30,8 @@ void main()async {
       create: (_) => ConfettiProvider(),
       child: const PaymentSuccessfulAnimationWidget(),
     ),
-    ChangeNotifierProvider<OrderProvider>(
-      create: (_) => OrderProvider(),
+    ChangeNotifierProvider<OrderScreenProvider>(
+      create: (_) => OrderScreenProvider(),
     ),
   ], child: const MyApp()));
 }

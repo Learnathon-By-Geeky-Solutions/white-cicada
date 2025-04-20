@@ -1,9 +1,9 @@
-import 'models/food_model.dart';
-import 'models/restaurent_model.dart';
+import '../models/food_model.dart';
+import '../models/restaurent_model.dart';
 
 List<RestaurantModel> restaurantList = [
   RestaurantModel(
-    sId: "1",
+    restaurantId: "1",
     restaurantName: "The Gourmet Hub",
     restaurantCode: 101,
     restaurantDescription:
@@ -21,7 +21,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 120,
   ),
   RestaurantModel(
-    sId: "2",
+    restaurantId: "2",
     restaurantName: "Spice Symphony",
     restaurantCode: 102,
     restaurantDescription: "Authentic Indian flavors with a modern twist.",
@@ -33,7 +33,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 98,
   ),
   RestaurantModel(
-    sId: "3",
+    restaurantId: "3",
     restaurantName: "Ocean Breeze Diner",
     restaurantCode: 103,
     restaurantDescription: "Seafood specialties with a stunning ocean view.",
@@ -50,7 +50,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 67,
   ),
   RestaurantModel(
-    sId: "4",
+    restaurantId: "4",
     restaurantName: "Mountain View Café",
     restaurantCode: 104,
     restaurantDescription: "Cozy café with organic coffee and fresh bakery.",
@@ -67,7 +67,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 85,
   ),
   RestaurantModel(
-    sId: "5",
+    restaurantId: "5",
     restaurantName: "Urban Grill",
     restaurantCode: 105,
     restaurantDescription: "Modern steakhouse with handcrafted cocktails.",
@@ -79,7 +79,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 132,
   ),
   RestaurantModel(
-    sId: "6",
+    restaurantId: "6",
     restaurantName: "Sunset Pizzeria",
     restaurantCode: 106,
     restaurantDescription: "Wood-fired pizzas with fresh organic ingredients.",
@@ -96,7 +96,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 74,
   ),
   RestaurantModel(
-    sId: "7",
+    restaurantId: "7",
     restaurantName: "Royal Thai",
     restaurantCode: 107,
     restaurantDescription: "Traditional Thai food with a luxurious ambiance.",
@@ -113,7 +113,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 105,
   ),
   RestaurantModel(
-    sId: "8",
+    restaurantId: "8",
     restaurantName: "Green Leaf Vegan",
     restaurantCode: 108,
     restaurantDescription:
@@ -131,7 +131,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 62,
   ),
   RestaurantModel(
-    sId: "9",
+    restaurantId: "9",
     restaurantName: "BBQ Kingdom",
     restaurantCode: 109,
     restaurantDescription: "Smoky BBQ dishes with a Southern-style twist.",
@@ -143,7 +143,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 99,
   ),
   RestaurantModel(
-    sId: "10",
+    restaurantId: "10",
     restaurantName: "Sushi Paradise",
     restaurantCode: 110,
     restaurantDescription: "Premium sushi with fresh, high-quality seafood.",
@@ -155,7 +155,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 110,
   ),
   RestaurantModel(
-    sId: "11",
+    restaurantId: "11",
     restaurantName: "Casa Mexicana",
     restaurantCode: 111,
     restaurantDescription: "Authentic Mexican street food and drinks.",
@@ -167,7 +167,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 55,
   ),
   RestaurantModel(
-    sId: "12",
+    restaurantId: "12",
     restaurantName: "The Rustic Table",
     restaurantCode: 112,
     restaurantDescription: "A cozy bistro offering farm-fresh comfort food.",
@@ -184,7 +184,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 90,
   ),
   RestaurantModel(
-    sId: "13",
+    restaurantId: "13",
     restaurantName: "The Pancake House",
     restaurantCode: 113,
     restaurantDescription:
@@ -202,7 +202,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 75,
   ),
   RestaurantModel(
-    sId: "14",
+    restaurantId: "14",
     restaurantName: "Tandoori Nights",
     restaurantCode: 114,
     restaurantDescription: "Mouth-watering tandoori dishes and spicy curries.",
@@ -219,7 +219,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 102,
   ),
   RestaurantModel(
-    sId: "15",
+    restaurantId: "15",
     restaurantName: "Fusion Bites",
     restaurantCode: 115,
     restaurantDescription: "An innovative mix of Asian and Western cuisine.",
@@ -236,7 +236,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 88,
   ),
   RestaurantModel(
-    sId: "16",
+    restaurantId: "16",
     restaurantName: "Cedar Steakhouse",
     restaurantCode: 116,
     restaurantDescription: "Premium steak cuts grilled to perfection.",
@@ -253,7 +253,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 125,
   ),
   RestaurantModel(
-    sId: "17",
+    restaurantId: "17",
     restaurantName: "Golden Wok",
     restaurantCode: 117,
     restaurantDescription:
@@ -271,7 +271,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 82,
   ),
   RestaurantModel(
-    sId: "18",
+    restaurantId: "18",
     restaurantName: "The Cozy Corner",
     restaurantCode: 118,
     restaurantDescription:
@@ -284,7 +284,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 50,
   ),
   RestaurantModel(
-    sId: "19",
+    restaurantId: "19",
     restaurantName: "Trattoria Roma",
     restaurantCode: 119,
     restaurantDescription: "Homemade Italian pasta and wood-fired pizza.",
@@ -296,7 +296,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 120,
   ),
   RestaurantModel(
-    sId: "20",
+    restaurantId: "20",
     restaurantName: "Fiesta Latina",
     restaurantCode: 120,
     restaurantDescription: "A vibrant experience with Latin American flavors.",
@@ -308,7 +308,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 102,
   ),
   RestaurantModel(
-    sId: "21",
+    restaurantId: "21",
     restaurantName: "The Breakfast Club",
     restaurantCode: 121,
     restaurantDescription: "A delightful spot for all-day breakfast lovers.",
@@ -320,7 +320,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 95,
   ),
   RestaurantModel(
-    sId: "22",
+    restaurantId: "22",
     restaurantName: "Harvest Table",
     restaurantCode: 122,
     restaurantDescription: "A farm-to-table restaurant serving organic meals.",
@@ -332,7 +332,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 68,
   ),
   RestaurantModel(
-    sId: "23",
+    restaurantId: "23",
     restaurantName: "Downtown Burgers",
     restaurantCode: 123,
     restaurantDescription: "Juicy handcrafted burgers with gourmet toppings.",
@@ -349,7 +349,7 @@ List<RestaurantModel> restaurantList = [
     orderQty: 130,
   ),
   RestaurantModel(
-    sId: "24",
+    restaurantId: "24",
     restaurantName: "Blue Lagoon",
     restaurantCode: 124,
     restaurantDescription: "A seafood haven with tropical cocktails.",

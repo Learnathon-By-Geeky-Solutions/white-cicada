@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/spacing.dart';
 import '../theme/src/theme_extensions/color_palette.dart';
-import '../../src/data/static_data.dart';
+import '../../src/data/dummy_data/static_data.dart';
 
 class PopularHotelCard extends StatelessWidget {
   const PopularHotelCard({

@@ -1,21 +1,21 @@
 import 'food_model.dart';
 
 class OrderModel {
-  final String uId;
+  final String userId;
   final String userName;
   final String hotelId;
   final String hotelName;
-  final int seatNo;
-  final String tablePrice;
-  final int totalPrice;
+  final int tableNo;
+  final double tablePrice;
+  final double totalPrice;
   List<FoodModel>? foodItemList;
 
   OrderModel({
-    required this.uId,
+    required this.userId,
     required this.userName,
     required this.hotelId,
     required this.hotelName,
-    required this.seatNo,
+    required this.tableNo,
     required this.tablePrice,
     required this.totalPrice,
     required this.foodItemList,
@@ -23,13 +23,13 @@ class OrderModel {
 
   factory OrderModel.fromJson(Map<String, dynamic> json) {
     return OrderModel(
-      uId: json['uId'] as String,
+      userId: json['uId'] as String,
       userName: json['userName'] as String,
       hotelId: json['hotelId'] as String,
       hotelName: json['hotelName'] as String,
-      seatNo: json['seatNo'] as int,
-      tablePrice: json['tablePrice'] as String,
-      totalPrice: json['totalPrice'] as int,
+      tableNo: json['seatNo'] as int,
+      tablePrice: json['tablePrice']! as double,
+      totalPrice: json['totalPrice'] as double,
       foodItemList: (json['foodItemList'] as List<dynamic>)
           .map((item) => FoodModel.fromJson(item))
           .toList(),
@@ -38,11 +38,11 @@ class OrderModel {
 
   Map<String, dynamic> toJson() {
     return {
-      'uId': uId,
+      'uId': userId,
       'userName': userName,
       'hotelId': hotelId,
       'hotelName': hotelName,
-      'seatNo': seatNo,
+      'seatNo': tableNo,
       'tablePrice': tablePrice,
       'totalPrice': totalPrice,
       'foodItemList': foodItemList?.map((item) => item.toJson()).toList(),

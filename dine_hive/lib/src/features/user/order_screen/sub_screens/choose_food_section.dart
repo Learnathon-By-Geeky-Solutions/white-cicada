@@ -1,13 +1,13 @@
 import 'package:dine_hive/core/theme/src/theme_extensions/color_palette.dart';
 import 'package:dine_hive/core/widgets/custom_bottom_buttons.dart';
-import 'package:dine_hive/src/data/providers/order_provider.dart';
+import 'package:dine_hive/src/data/providers/order_screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../../core/utils/toast_messages.dart';
 import '../../../../../core/utils/utils.dart';
 import '../../../../../core/widgets/food_item_card.dart';
 import '../../../../data/providers/cart_screen_provider.dart';
-import '../../../../data/static_data.dart';
+import '../../../../data/dummy_data/static_data.dart';
 
 class ChooseFoodSection extends StatelessWidget {
   const ChooseFoodSection({super.key});
@@ -31,7 +31,7 @@ class ChooseFoodSection extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               final restaurant = restaurantList.firstWhere(
-                (restaurant) => restaurant.sId == foodList[index].restaurantId,
+                (restaurant) => restaurant.restaurantId == foodList[index].restaurantId,
               );
               return FoodItemCard(
                 description: "100 gr chicken + tomato + cheese Lettuce",
@@ -54,8 +54,9 @@ class ChooseFoodSection extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Provider.of<OrderProvider>(context, listen: false)
+                  Provider.of<OrderScreenProvider>(context, listen: false)
                       .updatePage(1);
+                  cartProvider.calculateTotalPrice();
                 },
                 child: Text(
                   "Skip for now",
@@ -71,8 +72,9 @@ class ChooseFoodSection extends StatelessWidget {
                     cartProvider.cartItem.isEmpty
                         ? ToastService.showSnackbar(
                             context, "Select at least one")
-                        : Provider.of<OrderProvider>(context, listen: false)
+                        : Provider.of<OrderScreenProvider>(context, listen: false)
                             .updatePage(1);
+                    cartProvider.calculateTotalPrice();
                   }),
             ],
           ),

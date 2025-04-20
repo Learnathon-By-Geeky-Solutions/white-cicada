@@ -1,6 +1,6 @@
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/widgets/custom_app_bar.dart';
-import 'package:dine_hive/src/data/providers/order_provider.dart';
+import 'package:dine_hive/src/data/providers/order_screen_provider.dart';
 import 'package:dine_hive/src/features/user/order_screen/widgets/progress_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,12 +18,12 @@ class OrderScreen extends StatelessWidget {
           child: Column(
             children: [
               CustomAppBarWidget(
-                appBarTitle: Provider.of<OrderProvider>(context).appBarTitle[
-                    Provider.of<OrderProvider>(context).currentIndex],
+                appBarTitle: Provider.of<OrderScreenProvider>(context).appBarTitle[
+                    Provider.of<OrderScreenProvider>(context).currentIndex],
               ),
               const ProgressWidget(),
               Expanded(
-                child: Consumer<OrderProvider>(
+                child: Consumer<OrderScreenProvider>(
                   builder: (_, oderScreenProvider, __) {
                     return PageView.builder(
                       controller: oderScreenProvider.pageController,

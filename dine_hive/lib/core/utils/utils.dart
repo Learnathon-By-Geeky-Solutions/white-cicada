@@ -8,24 +8,28 @@ class Utils{
     return total / ratings.length;
   }
 
+
+  ///format your date
+  /// D,M,Y,W refers to Date , Month Year, days of week
+  /// d pass as digit & s pass as String
   static String formatDate(
       DateTime dateTime, {
-        String formatType = 'yyyy-MM-dd',
+        String formatType = 'Yd-Md-Dd',
       }) {
     switch (formatType) {
-      case 'yyyy-MM-dd':
+      case 'Yd-Md-Dd':
       // Format: 2025-04-10
         return DateFormat('yyyy-MM-dd').format(dateTime);
 
-      case 'dd-MM-yyyy':
+      case 'Dd-Md-Yd':
       // Format: 10-04-2025
         return DateFormat('dd-MM-yyyy').format(dateTime);
 
-      case 'MMM dd, yyyy':
+      case 'Ms-Dd-Yd':
       // Format: Apr 10, 2025
         return DateFormat('MMM dd, yyyy').format(dateTime);
 
-      case 'EEEE, MMM d':
+      case 'Ws-Ms-Ds':
       // Format: Thursday, Apr 10
         return DateFormat('EEEE, MMM d').format(dateTime);
 

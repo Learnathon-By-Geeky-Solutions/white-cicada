@@ -1,6 +1,6 @@
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/theme/src/theme_extensions/color_palette.dart';
-import 'package:dine_hive/src/data/providers/order_provider.dart';
+import 'package:dine_hive/src/data/providers/order_screen_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +9,7 @@ class ProgressWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Consumer<OrderProvider>(
+    return  Consumer<OrderScreenProvider>(
       builder: (context, orderProvider,_) {
         return Row(
           mainAxisAlignment: MainAxisAlignment.center,

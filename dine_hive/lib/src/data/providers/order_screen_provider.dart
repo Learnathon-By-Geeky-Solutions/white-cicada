@@ -1,9 +1,9 @@
-import 'package:dine_hive/src/features/user/order_screen/sub_screena/cart_section.dart';
-import 'package:dine_hive/src/features/user/order_screen/sub_screena/choose_food_section.dart';
 import 'package:flutter/cupertino.dart';
-import '../../features/user/payment_gateway_selection_screen/widgets/payment_gateway_option_widget.dart';
+import '../../features/user/order_screen/sub_screens/cart_section.dart';
+import '../../features/user/order_screen/sub_screens/choose_food_section.dart';
+import '../../features/user/order_screen/sub_screens/payment_method_selection.dart';
 
-class OrderProvider extends ChangeNotifier {
+class OrderScreenProvider extends ChangeNotifier {
 
   /// in this part control the page view
   /// initialize every thing
@@ -12,7 +12,7 @@ class OrderProvider extends ChangeNotifier {
   final List<Widget> _carouselItems = [
     const ChooseFoodSection(),
     const CartSection(),
-    const PaymentGatewayOptionWidget()
+    const PaymentMethodSelection()
   ];
   final List<String>_appBarTitle=[
     'Choose your food',
