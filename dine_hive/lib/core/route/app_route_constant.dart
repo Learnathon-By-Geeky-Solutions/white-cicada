@@ -12,4 +12,5 @@ class AppRouteConstant{
   static const String parentScreen =  '/parentScreen';
   static const String paymentGatewaySelectionScreen =  '/payment_gateway_selection_screen';
   static const String orderScreen = '/orderScreen';
+  static const String paymentSuccessful = '/paymentSuccessful';
 }
