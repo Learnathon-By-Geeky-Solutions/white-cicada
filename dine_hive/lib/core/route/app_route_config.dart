@@ -6,6 +6,7 @@ import 'package:dine_hive/src/features/user/edit_user_profile_screen/edit_user_p
 import 'package:dine_hive/src/features/user/order_screen/order_screen.dart';
 import 'package:dine_hive/src/features/user/parent_screen/parent_screen.dart';
 import 'package:dine_hive/src/features/user/payment_gateway_selection_screen/payment_gateway_selection_screen.dart';
+import 'package:dine_hive/src/features/user/payment_successful_screen/payment_successful_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:dine_hive/core/constant/texts.dart';
@@ -76,6 +77,12 @@ class AppRouteConfig {
           path: AppRouteConstant.orderScreen,
           pageBuilder: (context, state) {
             return const MaterialPage(child: OrderScreen());
+          }),
+      GoRoute(
+          name: AppRouteConstant.paymentSuccessful,
+          path: AppRouteConstant.paymentSuccessful,
+          pageBuilder: (context, state) {
+            return const MaterialPage(child: PaymentSuccessfulScreen());
           }),
     ],
   );

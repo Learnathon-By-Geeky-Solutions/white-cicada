@@ -1,10 +1,14 @@
+import 'dart:async';
+
 import 'package:dine_hive/core/constant/images.dart';
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/theme/src/theme_extensions/color_palette.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
+import 'package:dine_hive/src/features/user/payment_successful_screen/payment_successful_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
+import '../../../../../core/services/stripe_services.dart';
 import '../widgets/cart_item_card.dart';
 
 class CartSection extends StatelessWidget {
@@ -56,7 +60,9 @@ class CartSection extends StatelessWidget {
                   SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () async{
+                            await StripeServices.instance.makePayment(cartProvider.totalPrice.toInt(),context);
+                          },
                           style: const ButtonStyle(
                             backgroundColor: WidgetStatePropertyAll(AppColors.whiteColor)
                           ),
