@@ -8,7 +8,7 @@ import 'package:dine_hive/src/features/user/payment_successful_screen/payment_su
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
-import '../../../../../core/services/stripe_services.dart';
+import '../../../../../core/services/stripe_service/stripe_services.dart';
 import '../widgets/cart_item_card.dart';
 
 class CartSection extends StatelessWidget {
