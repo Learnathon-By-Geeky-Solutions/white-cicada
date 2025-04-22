@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "223438220185",
+    "firebase_url": "https://light-24555-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "light-24555",
+    "storage_bucket": "light-24555.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223438220185:android:63a01c06352cebf0de4108",
+        "android_client_info": {
+          "package_name": "com.example.dine_hive"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf9eqqzIytPjaJi6FNKztvWCXLVOlB0kU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223438220185:android:bedca6af98917e54de4108",
+        "android_client_info": {
+          "package_name": "com.example.get_space_ticket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf9eqqzIytPjaJi6FNKztvWCXLVOlB0kU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

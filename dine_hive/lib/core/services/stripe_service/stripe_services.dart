@@ -1,9 +1,6 @@
 import 'dart:async';
-
-import 'package:dine_hive/core/constant/texts.dart';
-import 'package:dine_hive/core/route/app_route_config.dart';
 import 'package:dine_hive/core/route/app_route_constant.dart';
-import 'package:dine_hive/core/services/stripe_key.dart';
+import 'package:dine_hive/core/services/stripe_service/stripe_key.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
@@ -71,6 +68,7 @@ class StripeServices {
   }
 
   /// This method open a stripe payment sheet
+  /// after that if payment complete navigate to payment successful screen
   Future<void> _processPayment(BuildContext context) async {
     try {
       await Stripe.instance.presentPaymentSheet();
