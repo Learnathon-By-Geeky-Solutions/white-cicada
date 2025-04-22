@@ -17,7 +17,7 @@ import 'package:dine_hive/src/features/user/restaurant_info_screen/restaurant_in
 
 class AppRouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: AppRouteConstant.parentScreen,
+    initialLocation: AppRouteConstant.initialRoute,
     routes: [
       GoRoute(
           name: AppText.signIn,
