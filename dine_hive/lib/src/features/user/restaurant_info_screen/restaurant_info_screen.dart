@@ -9,16 +9,11 @@ import '../../../data/dummy_data/static_data.dart';
 import '../../../data/providers/cart_screen_provider.dart';
 import 'widgets/restaurant_info_body_widget.dart';
 
-class RestaurantInfoScreen extends StatefulWidget {
+class RestaurantInfoScreen extends StatelessWidget {
   const RestaurantInfoScreen({super.key, this.restaurantId = "1"});
 
   final String restaurantId;
 
-  @override
-  State<RestaurantInfoScreen> createState() => _RestaurantInfoScreenState();
-}
-
-class _RestaurantInfoScreenState extends State<RestaurantInfoScreen> {
   RestaurantModel? getRestaurantById(
       String id, List<RestaurantModel> restaurants) {
     try {
@@ -46,8 +41,10 @@ class _RestaurantInfoScreenState extends State<RestaurantInfoScreen> {
               restaurant: restaurants,
             ),
             Gap(AppSpacing.screenHeight(context) * 0.02),
-            RestaurantInfoFooterWidget(
-              restaurant: restaurants,
+            Expanded(
+              child: RestaurantInfoFooterWidget(
+                restaurant: restaurants,
+              ),
             ),
           ],
         ),

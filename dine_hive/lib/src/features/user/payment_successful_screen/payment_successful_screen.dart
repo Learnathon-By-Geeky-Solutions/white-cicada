@@ -45,7 +45,7 @@ class PaymentSuccessfulScreen extends StatelessWidget {
               ),
             ],
           ),
-          CustomBottomBarWidget(textTheme: textTheme, title1: AppText.backToHome, title2: AppText.trackOrder, pIcon: Icons.home, sIcon: Icons.arrow_forward_ios_outlined),
+          const CustomBottomBarWidget(title1: AppText.backToHome, title2: AppText.trackOrder, pIcon: Icons.home),
         ],
       ),
     );

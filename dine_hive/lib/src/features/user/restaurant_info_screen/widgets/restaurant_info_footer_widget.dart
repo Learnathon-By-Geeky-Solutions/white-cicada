@@ -1,11 +1,12 @@
 import 'package:dine_hive/core/constant/texts.dart';
 import 'package:dine_hive/core/widgets/custom_bottom_bar.dart';
 import 'package:dine_hive/src/data/models/restaurent_model.dart';
+import 'package:dine_hive/src/data/providers/bottom_sheet_visibility_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class RestaurantInfoFooterWidget extends StatefulWidget {
   const RestaurantInfoFooterWidget({super.key, this.restaurant});
-
   final RestaurantModel? restaurant;
 
   @override
@@ -13,24 +14,19 @@ class RestaurantInfoFooterWidget extends StatefulWidget {
       _RestaurantInfoFooterWidgetState();
 }
 
-class _RestaurantInfoFooterWidgetState extends State<RestaurantInfoFooterWidget> {
-  final ScrollController _scrollController = ScrollController();
-  bool _showBottomSheet = true;
+class _RestaurantInfoFooterWidgetState
+    extends State<RestaurantInfoFooterWidget> {
+  late final ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(() {
-      if (_scrollController.offset > 10 && _showBottomSheet) {
-        setState(() {
-          _showBottomSheet = false;
-        });
-      } else if (_scrollController.offset <= 0 && !_showBottomSheet) {
-        setState(() {
-          _showBottomSheet = true;
-        });
-      }
-    });
+    _scrollController = ScrollController()
+      ..addListener(() {
+        context
+            .read<BottomSheetVisibilityProvider>()
+            .updateVisibility(_scrollController.offset);
+      });
   }
 
   @override
@@ -41,34 +37,42 @@ class _RestaurantInfoFooterWidgetState extends State<RestaurantInfoFooterWidget>
 
   @override
   Widget build(BuildContext context) {
-    TextTheme textTheme = Theme.of(context).textTheme;
+    final textTheme = Theme.of(context).textTheme;
+    final showBar =
+        context.watch<BottomSheetVisibilityProvider>().showBottomSheet;
 
-    return Expanded(
-      child: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: SingleChildScrollView(
-              controller: _scrollController,
-              child: Text(
-                textAlign: TextAlign.justify,
-                widget.restaurant?.restaurantDescription ?? "No description available for this restaurant.",
-                style: textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16,
-                    ) ?? const TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+    return Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32),
+          child: SingleChildScrollView(
+            controller: _scrollController,
+            padding: const EdgeInsets.only(bottom: 80),
+            child: Text(
+              widget.restaurant?.restaurantDescription ??
+                  'No description available.',
+              textAlign: TextAlign.justify,
+              style: textTheme.bodyMedium?.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ),
-      
-          AnimatedOpacity(
-            opacity: _showBottomSheet ? 1.0 : 0.0,
+        ),
+
+        // — the fading bottom bar:
+        Positioned(
+          child: AnimatedOpacity(
+            opacity: showBar ? 1 : 0,
             duration: const Duration(milliseconds: 300),
-            child: CustomBottomBarWidget(textTheme: textTheme, title1: AppText.favourite, title2: AppText.bookNow, pIcon: Icons.favorite, sIcon: Icons.arrow_forward_ios_outlined),
+            child: const CustomBottomBarWidget(
+              title1: AppText.backToHome,
+              title2: AppText.trackOrder,
+              pIcon: Icons.home,
+            ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
-

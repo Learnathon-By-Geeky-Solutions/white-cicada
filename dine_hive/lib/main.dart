@@ -1,5 +1,6 @@
 import 'package:dine_hive/core/route/app_route_config.dart';
 import 'package:dine_hive/core/theme/app_theme.dart';
+import 'package:dine_hive/src/data/providers/bottom_sheet_visibility_provider.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/confetti_provider.dart';
 import 'package:dine_hive/src/data/providers/home_screen_provider.dart';
@@ -33,6 +34,9 @@ void main()async {
     ChangeNotifierProvider<OrderScreenProvider>(
       create: (_) => OrderScreenProvider(),
     ),
+    ChangeNotifierProvider<BottomSheetVisibilityProvider>(
+      create: (_) => BottomSheetVisibilityProvider(),
+    )
   ], child: const MyApp()));
 }
 

@@ -7,9 +7,10 @@ import 'package:gap/gap.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
 
 class RestaurantInfoBodyWidget extends StatefulWidget {
-  const RestaurantInfoBodyWidget(
-      {super.key, required this.restaurant,
-      });
+  const RestaurantInfoBodyWidget({
+    super.key,
+    required this.restaurant,
+  });
 
   final RestaurantModel? restaurant;
 
@@ -41,10 +42,11 @@ class _RestaurantInfoBodyWidgetState extends State<RestaurantInfoBodyWidget> {
             ),
             child: Center(
               child: Text(
-                widget.restaurant!.isPopular ? AppText.popular : AppText.notPopular,
-                style: const TextStyle(
+                widget.restaurant!.isPopular
+                    ? AppText.popular
+                    : AppText.notPopular,
+                style: textTheme.bodyMedium!.copyWith(
                     color: AppColors.buttonFrontColor,
-                    fontSize: 14,
                     fontWeight: FontWeight.w600),
               ),
             ),
@@ -63,7 +65,7 @@ class _RestaurantInfoBodyWidgetState extends State<RestaurantInfoBodyWidget> {
               RatingStar(rating: averageRating),
               const Gap(8),
               Text('${averageRating.toString()} Ratings',
-                  style: const TextStyle(
+                  style: textTheme.bodyLarge!.copyWith(
                       color: AppColors.whiteShadeColor,
                       fontSize: 18,
                       fontWeight: FontWeight.w600)),
@@ -76,7 +78,7 @@ class _RestaurantInfoBodyWidgetState extends State<RestaurantInfoBodyWidget> {
               const Gap(8),
               Text(
                 '${widget.restaurant!.orderQty.toString()}+ Orders',
-                style: const TextStyle(
+                style: textTheme.bodyLarge!.copyWith(
                     color: AppColors.whiteShadeColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w600),

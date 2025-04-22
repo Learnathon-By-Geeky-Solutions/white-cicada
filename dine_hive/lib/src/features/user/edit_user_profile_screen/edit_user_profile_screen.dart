@@ -7,16 +7,10 @@ import 'package:dine_hive/src/features/user/edit_user_profile_screen/widgets/edi
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class EditUserProfileScreen extends StatefulWidget {
+class EditUserProfileScreen extends StatelessWidget {
   const EditUserProfileScreen({super.key, this.userId = 'user123'});
 
   final String userId;
-
-  @override
-  State<EditUserProfileScreen> createState() => _EditUserProfileScreenState();
-}
-
-class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
 
   UserModel? getUserById(String id) {
     return staticUser.userId == id ? staticUser : null;
@@ -25,22 +19,20 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
   @override
   Widget build(BuildContext context) {
     UserModel? userModel = getUserById('user123');
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.pagePadding),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const EditUserProfileScreenAppBarWidget(),
-                Gap(AppSpacing.screenHeight(context) * 0.02),
-                EditProfilePhotoWidget(userModel: userModel,),
-                Gap(AppSpacing.screenHeight(context) * 0.02),
-                EditDetailsFormWidget(userModel: userModel,),
-              ]
-            ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.pagePadding),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const EditUserProfileScreenAppBarWidget(),
+              Gap(AppSpacing.screenHeight(context) * 0.02),
+              EditProfilePhotoWidget(userModel: userModel,),
+              Gap(AppSpacing.screenHeight(context) * 0.02),
+              EditDetailsFormWidget(userModel: userModel,),
+            ]
           ),
         ),
       ),
