@@ -7,7 +7,7 @@ import 'package:dine_hive/src/data/providers/home_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/order_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/payment_option_provider.dart';
-import 'package:dine_hive/src/features/user/payment_successful_screen/widgets/payment_successful_animation_widget.dart';
+import 'package:dine_hive/src/data/providers/user_provider.dart';
 import 'package:dynamic_path_url_strategy/dynamic_path_url_strategy.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -23,24 +23,13 @@ void main()async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider<HomeScreenProvider>(
-      create: (_) => HomeScreenProvider(),
-    ),
-    ChangeNotifierProvider<ParentScreenProvider>(
-      create: (_) => ParentScreenProvider(),
-    ),
-    ChangeNotifierProvider<CartScreenProvider>(
-      create: (_) => CartScreenProvider(),),
-    ChangeNotifierProvider<PaymentOptionProvider>(
-      create: (_) => PaymentOptionProvider(),
-    ),
-    ChangeNotifierProvider<ConfettiProvider>(
-      create: (_) => ConfettiProvider(),
-      child: const PaymentSuccessfulAnimationWidget(),
-    ),
-    ChangeNotifierProvider<OrderScreenProvider>(
-      create: (_) => OrderScreenProvider(),
-    ),
+    ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
+    ChangeNotifierProvider(create: (_) => ParentScreenProvider()),
+    ChangeNotifierProvider(create: (_) => CartScreenProvider()),
+    ChangeNotifierProvider(create: (_) => PaymentOptionProvider()),
+    ChangeNotifierProvider(create: (_) => ConfettiProvider()),
+    ChangeNotifierProvider(create: (_) => OrderScreenProvider()),
+    ChangeNotifierProvider(create: (_) => UserProvider()),
   ], child: const MyApp()));
 }
 
