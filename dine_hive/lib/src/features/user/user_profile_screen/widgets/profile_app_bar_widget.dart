@@ -1,21 +1,12 @@
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/constant/texts.dart';
 import 'package:dine_hive/core/route/app_route_constant.dart';
-import 'package:dine_hive/src/data/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
 
-class ProfileAppBarWidget extends StatefulWidget {
-  const ProfileAppBarWidget({super.key, this.userModel});
-
-  final UserModel? userModel;
-
-  @override
-  State<ProfileAppBarWidget> createState() => _ProfileAppBarWidgetState();
-}
-
-class _ProfileAppBarWidgetState extends State<ProfileAppBarWidget> {
+class ProfileAppBarWidget extends StatelessWidget {
+  const ProfileAppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +20,8 @@ class _ProfileAppBarWidgetState extends State<ProfileAppBarWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              AppText.profile,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: AppColors.blackColor,
-              ),
-            ),
+            Text(AppText.profile,
+                style: Theme.of(context).textTheme.titleLarge),
             _buildPopupSettingMenuButton(),
           ],
         ),
@@ -82,26 +67,29 @@ class _ProfileAppBarWidgetState extends State<ProfileAppBarWidget> {
             ),
             PopupMenuItem<String>(
               value: 'password_security',
-              child: _buildSettingMenuItem(Icons.lock_outline, "Password and Security"),
+              child: _buildSettingMenuItem(
+                  Icons.lock_outline, "Password and Security"),
             ),
             PopupMenuItem<String>(
               value: 'notifications',
-              child: _buildSettingMenuItem(Icons.notifications_active_outlined, "Notifications"),
+              child: _buildSettingMenuItem(
+                  Icons.notifications_active_outlined, "Notifications"),
             ),
             PopupMenuItem<String>(
               value: 'dark_mode',
-              child: _buildSettingMenuItem(Icons.dark_mode_outlined, "Dark Mode"),
+              child:
+                  _buildSettingMenuItem(Icons.dark_mode_outlined, "Dark Mode"),
             ),
             PopupMenuItem<String>(
               value: 'about_us',
-              child: _buildSettingMenuItem(Icons.info_outline_rounded, "About Us"),
+              child:
+                  _buildSettingMenuItem(Icons.info_outline_rounded, "About Us"),
             ),
           ],
         );
       },
     );
   }
-
 
   Widget _buildSettingMenuItem(IconData icon, String label) {
     return Row(

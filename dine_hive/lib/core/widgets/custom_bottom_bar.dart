@@ -2,26 +2,19 @@ import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/constant/texts.dart';
 import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:dine_hive/core/widgets/custom_bottom_buttons.dart';
-import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
-import 'package:dine_hive/src/features/user/choose_table/choose_table_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
 class CustomBottomBarWidget extends StatelessWidget {
   const CustomBottomBarWidget({
     super.key,
-    required this.textTheme,
     required this.title1,
     required this.title2,
     this.pIcon,
-    this.sIcon,
   });
 
-  final TextTheme textTheme;
   final String title1;
   final String title2;
-  final IconData? sIcon;
   final IconData? pIcon;
 
   @override
@@ -52,7 +45,7 @@ class CustomBottomBarWidget extends StatelessWidget {
                         context.push(AppRouteConstant.chooseTableScreen),
                     child: CustomBottomButtons(
                       title: AppText.bookNow,
-                      suffixIcon: sIcon,
+                      suffixIcon: Icons.arrow_forward_ios_outlined,
                       onTappedAction: () {
                         context.push(AppRouteConstant.chooseTableScreen);
                       },

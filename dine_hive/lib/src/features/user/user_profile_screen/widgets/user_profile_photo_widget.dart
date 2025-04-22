@@ -1,21 +1,20 @@
 import 'package:dine_hive/core/constant/images.dart';
 import 'package:dine_hive/core/constant/spacing.dart';
+import 'package:dine_hive/src/data/dummy_data/static_user_data.dart';
 import 'package:dine_hive/src/data/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class UserProfilePhotoWidget extends StatefulWidget {
-  const UserProfilePhotoWidget({super.key, this.userModel});
+class UserProfilePhotoWidget extends StatelessWidget {
+  const UserProfilePhotoWidget({super.key, this.userId = 'user123'});
 
-  final UserModel? userModel;
+  final String userId;
 
-  @override
-  State<UserProfilePhotoWidget> createState() => _UserProfilePhotoWidgetState();
-}
+  UserModel? get _user => staticUser.userId == userId ? staticUser : null;
 
-class _UserProfilePhotoWidgetState extends State<UserProfilePhotoWidget> {
   @override
   Widget build(BuildContext context) {
+    final user = _user;
     return Column(children: [
       const CircleAvatar(
         radius: 80,
@@ -23,15 +22,15 @@ class _UserProfilePhotoWidgetState extends State<UserProfilePhotoWidget> {
       ),
       Gap(AppSpacing.screenHeight(context) * 0.02),
       Text(
-        widget.userModel!.userName,
-        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+        user!.userName,
+        style: Theme.of(context).textTheme.headlineMedium,
       ),
       Gap(AppSpacing.screenHeight(context) * 0.01),
       Text(
-        widget.userModel != null && widget.userModel!.userBio != null
-            ? widget.userModel!.userBio!
+        user.userBio != null
+            ? user.userBio!
             : '',
-        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+        style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w100),
       ),
     ]);
   }
