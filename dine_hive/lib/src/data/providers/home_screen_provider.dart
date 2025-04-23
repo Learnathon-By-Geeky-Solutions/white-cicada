@@ -1,6 +1,5 @@
 import 'package:dine_hive/core/widgets/offer_card.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
 
 class HomeScreenProvider extends ChangeNotifier{
   int _currentIndex = 0;

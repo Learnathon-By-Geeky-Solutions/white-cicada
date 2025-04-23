@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
-import '../../../../data/models/restaurent_table_model.dart';
+import '../../../../data/models/restaurant_table_model.dart';
 class TableBookButton extends StatelessWidget {
-  final RestaurentTableModel table;
+  final RestaurantTableModel table;
   final VoidCallback onPressed;
-  TableBookButton({required this.table, required this.onPressed});
+  const TableBookButton({super.key, required this.table, required this.onPressed});
   Color _getButtonColor() {
     switch (table.tableStatus.toLowerCase()) {
       case 'reserved':

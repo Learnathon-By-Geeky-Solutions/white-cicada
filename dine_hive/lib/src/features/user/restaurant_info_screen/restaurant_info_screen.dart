@@ -1,5 +1,5 @@
 
-import 'package:dine_hive/src/data/models/restaurent_model.dart';
+import 'package:dine_hive/src/data/models/restaurant_model.dart';
 import 'package:dine_hive/src/features/user/restaurant_info_screen/widgets/restaurant_info_footer_widget.dart';
 import 'package:dine_hive/src/features/user/restaurant_info_screen/widgets/restaurant_info_header_widget.dart';
 import 'package:flutter/material.dart';

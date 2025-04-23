@@ -1,6 +1,7 @@
 import 'package:dine_hive/core/route/app_route_config.dart';
 import 'package:dine_hive/core/theme/app_theme.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
+import 'package:dine_hive/src/data/providers/choose_table_provider.dart';
 import 'package:dine_hive/src/data/providers/home_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/payment_option_provider.dart';
@@ -22,6 +23,9 @@ void main() {
     ChangeNotifierProvider<PaymentOptionProvider>(
       create: (_) => PaymentOptionProvider(),
     ),
+    ChangeNotifierProvider<ChooseTableProvider>(
+      create: (_) => ChooseTableProvider(),
+    )
   ], child: const MyApp()));
 }
 

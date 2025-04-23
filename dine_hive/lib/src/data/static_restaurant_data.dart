@@ -1,6 +1,6 @@
-import 'models/restaurent_model.dart';
+import 'models/restaurant_model.dart';
 
-List<RestaurantModel> restaurantList = [
+List<RestaurantModel> dummyRestaurants = [
   RestaurantModel(
     sId: "1",
     restaurantName: "The Gourmet Hub",

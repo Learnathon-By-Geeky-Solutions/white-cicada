@@ -1,10 +1,10 @@
-class RestaurentTableModel {
+class RestaurantTableModel {
   final String sId;
   final int tableNo;
   final int numberOfSeats;
   final String tableStatus;
   final List<String> tableImg;
-  RestaurentTableModel(
+  RestaurantTableModel(
   {required this.sId,
     required this.tableNo,
     required this.numberOfSeats,
