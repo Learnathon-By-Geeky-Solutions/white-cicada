@@ -4,9 +4,11 @@ import 'package:dine_hive/core/theme/app_theme.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/confetti_provider.dart';
 import 'package:dine_hive/src/data/providers/home_screen_provider.dart';
+import 'package:dine_hive/src/data/providers/login_provider.dart';
 import 'package:dine_hive/src/data/providers/order_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/parent_screen_provider.dart';
 import 'package:dine_hive/src/data/providers/payment_option_provider.dart';
+import 'package:dine_hive/src/data/providers/splash_provider.dart';
 import 'package:dine_hive/src/data/providers/user_provider.dart';
 import 'package:dynamic_path_url_strategy/dynamic_path_url_strategy.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,6 +32,8 @@ void main()async {
     ChangeNotifierProvider(create: (_) => ConfettiProvider()),
     ChangeNotifierProvider(create: (_) => OrderScreenProvider()),
     ChangeNotifierProvider(create: (_) => UserProvider()),
+    ChangeNotifierProvider(create: (_) => LoginProvider()),
+    ChangeNotifierProvider(create: (_) => SplashProvider()),
   ], child: const MyApp()));
 }
 

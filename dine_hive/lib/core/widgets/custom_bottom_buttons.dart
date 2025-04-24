@@ -37,19 +37,21 @@ class CustomBottomButtons extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 5,
             children: [
               Icon(
                 prefixIcon,
                 color: AppColors.buttonFrontColor,
                 size: 30,
               ),
-              const Gap(5),
-              Text(
-                title,
-                style:
-                    textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w600),
+              Expanded(
+                child: Text(
+                  title,
+                  style:
+                      textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w600),
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
-              const Gap(5),
               Icon(
                 suffixIcon,
                 color: buttonColor??AppColors.buttonFrontColor,

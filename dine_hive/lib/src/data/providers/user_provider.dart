@@ -5,11 +5,16 @@ import '../models/user_model.dart';
 import '../repositories/user_repository/user_repository.dart';
 
 class UserProvider with ChangeNotifier {
+  ///initialize userRepository
   final UserRepository _userRepository = UserRepository();
+  ///Initialize all the controller from signup screen
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-  TextEditingController nameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController get nameController => _nameController;
+  TextEditingController get emailController => _emailController;
+  TextEditingController get passwordController => _passwordController;
 
   UserModel? _user;
   UserModel? get user => _user;

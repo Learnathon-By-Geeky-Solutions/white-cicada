@@ -1,12 +1,9 @@
 import 'package:dine_hive/core/constant/spacing.dart';
-import 'package:dine_hive/core/constant/texts.dart';
 import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:dine_hive/core/widgets/custom_bottom_buttons.dart';
-import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
-import 'package:dine_hive/src/features/user/choose_table/choose_table_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
+import '../theme/src/theme_extensions/color_palette.dart';
 
 class CustomBottomBarWidget extends StatelessWidget {
   const CustomBottomBarWidget({
@@ -30,9 +27,9 @@ class CustomBottomBarWidget extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: Container(
           width: AppSpacing.screenWidth(context) * 0.9,
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(8),
           decoration: const BoxDecoration(
-            color: Colors.white,
+            color: AppColors.whiteColor,
             borderRadius: BorderRadius.vertical(
                 top: Radius.circular(20), bottom: Radius.circular(20)),
             boxShadow: [BoxShadow(blurRadius: 5, color: Colors.black26)],
@@ -41,21 +38,26 @@ class CustomBottomBarWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                spacing: 5,
                 children: [
-                  CustomBottomButtons(
-                    title: AppText.favourite,
-                    prefixIcon: pIcon,
-                    onTappedAction: () {},
-                  ),
-                  GestureDetector(
-                    onTap: () =>
-                        context.push(AppRouteConstant.chooseTableScreen),
+                  Expanded(
                     child: CustomBottomButtons(
-                      title: AppText.bookNow,
-                      suffixIcon: sIcon,
-                      onTappedAction: () {
-                        context.push(AppRouteConstant.chooseTableScreen);
-                      },
+                      title: title1,
+                      prefixIcon: pIcon,
+                      onTappedAction: () {},
+                    ),
+                  ),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () =>
+                          context.push(AppRouteConstant.chooseTableScreen),
+                      child: CustomBottomButtons(
+                        title: title2,
+                        suffixIcon: sIcon,
+                        onTappedAction: () {
+                          context.push(AppRouteConstant.chooseTableScreen);
+                        },
+                      ),
                     ),
                   ),
                 ]),
