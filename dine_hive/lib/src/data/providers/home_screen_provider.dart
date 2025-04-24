@@ -1,8 +1,6 @@
 import 'package:dine_hive/core/widgets/offer_card.dart';
 import 'package:dine_hive/src/data/models/food_model.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
-
 import '../dummy_data/static_data.dart';
 
 class HomeScreenProvider extends ChangeNotifier {

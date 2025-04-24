@@ -8,8 +8,9 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///initialize splash timer function in splash provider
+    ///which wait 3 second then navigate with user requirement
     Future.microtask(() => context.read<SplashProvider>().splashTimer(context));
-
     return Scaffold(
       body: Center(
             child: Column(
