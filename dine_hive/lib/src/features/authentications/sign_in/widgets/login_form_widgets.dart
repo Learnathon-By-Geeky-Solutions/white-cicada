@@ -23,6 +23,8 @@ class LoginFormWidgets extends StatelessWidget {
         children: [
           Form(
             key: formKey,
+
+            ///email field
             child: TextFormField(
               keyboardType: TextInputType.emailAddress,
               controller: loginProvider.emailController,
@@ -32,13 +34,17 @@ class LoginFormWidgets extends StatelessWidget {
             ),
           ),
           Gap(AppSpacing.screenHeight(context) * 0.02),
+          ///password field
           TextFormField(
             controller: loginProvider.passwordController,
+            obscureText: true,
             decoration: const InputDecoration(
               prefixIcon: Icon(Icons.lock),
               hintText: AppText.password,
             ),
           ),
+
+          ///forget password button
           Align(
             alignment: Alignment.centerRight,
             child: TextButton(
@@ -50,6 +56,8 @@ class LoginFormWidgets extends StatelessWidget {
                   style: TextStyle(color: AppColors.blackShadeColor),
                 )),
           ),
+
+          ///sign in button
           SizedBox(
             width: double.infinity,
             height: 55,

@@ -7,13 +7,17 @@ import '../../../core/route/app_route_constant.dart';
 
 class SplashProvider extends ChangeNotifier {
   Future<void> splashTimer(BuildContext context) async {
+
+    ///initialize sharedpref
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final bool? isLogin = prefs.getBool(AppKeys.isLogin);
 
+    /// splash waiting
     await Future.delayed(const Duration(seconds: 1));
 
     if (!context.mounted) return;
 
+    ///checking user is login or not
     if (isLogin == null || isLogin == false) {
       route(context, 'not_login');
     } else {
@@ -22,6 +26,8 @@ class SplashProvider extends ChangeNotifier {
     }
   }
 
+
+  /// routing in different types of user
   void route(BuildContext context, String role) {
     final String redirectRoute;
 

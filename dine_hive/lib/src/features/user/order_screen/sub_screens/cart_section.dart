@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:dine_hive/core/constant/images.dart';
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/theme/src/theme_extensions/color_palette.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
-import 'package:dine_hive/src/features/user/payment_successful_screen/payment_successful_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
@@ -22,10 +19,12 @@ class CartSection extends StatelessWidget {
         return Column(
           children: [
             const Gap(10),
+            /// all item in cart
             Expanded(
               child: ListView.builder(
                   itemCount: cartProvider.cartItem.length,
                   itemBuilder: (BuildContext context, int index) {
+                    /// cart item widget
                     return CartItemCard(
                       textTheme: textTheme,
                       cartProvider: cartProvider,
@@ -33,6 +32,7 @@ class CartSection extends StatelessWidget {
                     );
                   }),
             ),
+            /// footer showing prices section & calling payment services
             Container(
               padding: const EdgeInsets.all(12),
               margin: const EdgeInsets.symmetric(
@@ -61,6 +61,8 @@ class CartSection extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                           onPressed: () async{
+
+                            /// calling stripe services
                             await StripeServices.instance.makePayment(cartProvider.totalPrice.toInt(),context);
                           },
                           style: const ButtonStyle(
