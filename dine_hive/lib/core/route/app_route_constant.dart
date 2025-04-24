@@ -13,4 +13,7 @@ class AppRouteConstant{
   static const String paymentGatewaySelectionScreen =  '/payment_gateway_selection_screen';
   static const String orderScreen = '/orderScreen';
   static const String paymentSuccessful = '/paymentSuccessful';
+  static const String splashScreen= '/splashScreen';
+  static const String adminHomeScreen= '/adminHomeScreen';
+  static const String sellerHomeScreen= '/sellerHomeScreen';
 }

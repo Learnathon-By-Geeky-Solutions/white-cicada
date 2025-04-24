@@ -56,16 +56,19 @@ class LoginFormWidgets extends StatelessWidget {
             child: ElevatedButton(
                 onPressed: () {
                   AuthService authService = AuthService();
+
                   /// Login
-                  authService.signInWithEmail(
-                      loginProvider.emailController.text.toString(),
-                      loginProvider.passwordController.text.toString()).then((action){
-                        ///Navigate to parent screen
-                        context.go(AppRouteConstant.parentScreen);
-                  }).onError((error,stacktrace){
+                  authService
+                      .signInWithEmail(
+                          loginProvider.emailController.text.toString(),
+                          loginProvider.passwordController.text.toString(),
+                          context)
+                      .then((action) {
+                    ///Navigate to parent screen
+                    ToastService.showSnackbar(context, 'Login Successful');
+                  }).onError((error, stacktrace) {
                     ToastService.showSnackbar(context, error.toString());
                   });
-
                 },
                 child: Text(
                   AppText.signIn,
