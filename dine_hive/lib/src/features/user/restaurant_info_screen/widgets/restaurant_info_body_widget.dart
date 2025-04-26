@@ -4,8 +4,7 @@ import 'package:dine_hive/src/data/models/restaurant_model.dart';
 import 'package:dine_hive/src/features/user/restaurant_info_screen/widgets/custom_rating_star.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import '../../../../../core/theme/src/theme_extensions/color_palette.dart'
-    as AppColors;
+import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
 
 class RestaurantInfoBodyWidget extends StatefulWidget {
   const RestaurantInfoBodyWidget(

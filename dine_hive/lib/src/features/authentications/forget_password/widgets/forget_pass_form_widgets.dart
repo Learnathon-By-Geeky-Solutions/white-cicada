@@ -30,7 +30,7 @@ class ForgetPassFormWidgets extends StatelessWidget {
                   onPressed: () {context.go(AppRouteConstant.initialRoute);},
                   child: Text(
                     AppText.cancel,
-                    style: textTheme.titleMedium!.copyWith(color: redColor),
+                    style: textTheme.titleMedium!.copyWith(color: AppColors.redColor),
                   )
               ),
               ElevatedButton(
@@ -39,11 +39,11 @@ class ForgetPassFormWidgets extends StatelessWidget {
                     children: [
                       Text(
                         AppText.sendEmail,
-                        style: textTheme.titleMedium!.copyWith(color: whiteColor),
+                        style: textTheme.titleMedium!.copyWith(color: AppColors.whiteColor),
                       ),
                       Gap(AppSpacing.screenWidth(context) * 0.01),
                       const Icon(Icons.arrow_forward,
-                        color: whiteColor,
+                        color: AppColors.whiteColor,
                       )
                     ],
                   )),

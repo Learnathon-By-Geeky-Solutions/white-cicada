@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
 import '../../../../data/models/restaurant_table_model.dart';
+
 class TableBookButton extends StatelessWidget {
   final RestaurantTableModel table;
   final VoidCallback onPressed;
@@ -8,11 +9,11 @@ class TableBookButton extends StatelessWidget {
   Color _getButtonColor() {
     switch (table.tableStatus.toLowerCase()) {
       case 'reserved':
-        return reservedColor;
+        return AppColors.reservedColor;
       case 'booked':
-        return bookedColor;
+        return AppColors.bookedColor;
       default:
-        return availableColor;
+        return AppColors.availableColor;
     }
   }
 
@@ -22,24 +23,24 @@ class TableBookButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        foregroundColor: Colors.black,
-        backgroundColor: _getButtonColor()// Ensure text is visible
-      ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          foregroundColor: Colors.black,
+          backgroundColor: _getButtonColor() // Ensure text is visible
+          ),
       child: RichText(
         textAlign: TextAlign.center,
         text: TextSpan(
           children: [
             TextSpan(
-              text: 'T.No ${table.tableNo}\n',
-              style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold)
-            ),
+                text: 'T.No ${table.tableNo}\n',
+                style:
+                    textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold)),
             TextSpan(
-              text: '${table.numberOfSeats} Seats',
-              style: textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold)
-            ),
+                text: '${table.numberOfSeats} Seats',
+                style:
+                    textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold)),
           ],
         ),
       ),

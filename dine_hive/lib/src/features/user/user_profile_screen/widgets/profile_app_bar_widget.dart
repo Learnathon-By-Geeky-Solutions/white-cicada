@@ -4,8 +4,7 @@ import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:dine_hive/src/data/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/theme/src/theme_extensions/color_palette.dart'
-    as AppColors;
+import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
 
 class ProfileAppBarWidget extends StatefulWidget {
   const ProfileAppBarWidget({super.key, this.userModel});
@@ -23,29 +22,24 @@ class _ProfileAppBarWidgetState extends State<ProfileAppBarWidget> {
     return SizedBox(
       width: AppSpacing.screenWidth(context),
       height: 80,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              size: 26,
-              color: AppColors.whiteColor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              AppText.profile,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: AppColors.blackColor,
+              ),
             ),
-          ),
-          const Text(
-            AppText.profile,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: AppColors.blackColor,
-            ),
-          ),
-          _buildPopupSettingMenuButton(),
-        ],
+            _buildPopupSettingMenuButton(),
+          ],
+        ),
       ),
     );
   }

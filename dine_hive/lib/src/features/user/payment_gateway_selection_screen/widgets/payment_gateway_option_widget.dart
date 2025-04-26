@@ -18,7 +18,6 @@ class PaymentGatewayOptionWidget extends StatefulWidget {
 
 class _PaymentGatewayOptionWidgetState
     extends State<PaymentGatewayOptionWidget> {
-  bool isSelected = false;
 
   void _onTapPayButton(BuildContext context) {
     final selectedOption = context.read<PaymentOptionProvider>().selectedOption;
@@ -58,7 +57,7 @@ class _PaymentGatewayOptionWidgetState
             onPressed: () => _onTapPayButton(context),
             child: Text(
               AppText.payNow,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(color: whiteColor),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(color: AppColors.whiteColor),
             ),
           ),
         ),
@@ -79,10 +78,10 @@ class _PaymentGatewayOptionWidgetState
           height: AppSpacing.screenHeight(context) * 0.15,
           width: AppSpacing.screenWidth(context),
           decoration: BoxDecoration(
-            color: isSelected ? textFiledFillColor : whiteColor,
+            color: isSelected ? AppColors.textFiledFillColor : AppColors.whiteColor,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: isSelected ? orangeColor : Colors.transparent,
+              color: isSelected ? AppColors.orangeColor : Colors.transparent,
               width: 3,
             ),
           ),
@@ -93,7 +92,7 @@ class _PaymentGatewayOptionWidgetState
               children: [
                 Text(
                   title,
-                  style: const TextStyle(color: blackColor, fontSize: 16),
+                  style: const TextStyle(color: AppColors.blackColor, fontSize: 16),
                 ),
                 logoWidget,
               ],
@@ -111,7 +110,7 @@ class _PaymentGatewayOptionWidgetState
       mainAxisSize: MainAxisSize.min,
       children: [
         _buildLogo(AppImages.bkashLogo, 0.05, 0.18),
-        _buildRocketLogo(AppImages.rocketLogo),
+        _buildLogo(AppImages.rocketLogo, 0.05, 0.18, isSvg: false),
         _buildLogo(AppImages.nagadLogo, 0.05, 0.18),
       ],
     );
@@ -129,23 +128,12 @@ class _PaymentGatewayOptionWidgetState
     );
   }
 
-  SizedBox _buildLogo(String logo, double height, double width) {
+  SizedBox _buildLogo(String logo, double height, double width,
+      {bool isSvg = true}) {
     return SizedBox(
       height: AppSpacing.screenHeight(context) * height,
       width: AppSpacing.screenWidth(context) * width,
-      child: SvgPicture.asset(
-        logo,
-      ),
-    );
-  }
-
-  SizedBox _buildRocketLogo(String logo) {
-    return SizedBox(
-      height: AppSpacing.screenHeight(context) * 0.05,
-      width: AppSpacing.screenWidth(context) * 0.18,
-      child: Image.asset(
-        logo,
-      ),
+      child: isSvg ? SvgPicture.asset(logo) : Image.asset(logo),
     );
   }
 }

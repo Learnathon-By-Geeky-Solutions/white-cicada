@@ -25,13 +25,13 @@ class CustomBottomNav extends StatelessWidget {
             icon: Icons.home,
             label: 'Home',
             isSelected: selectedIndex == 0,
-            onTap: () => parentScreenProvider.setNavBarScreen(0),
+            onTap: () => parentScreenProvider.updateNavBarScreen(0),
           ),
           NavItemWidget(
             icon: Icons.person,
             label: 'Profile',
             isSelected: selectedIndex == 1,
-            onTap: () => parentScreenProvider.setNavBarScreen(1),
+            onTap: () => parentScreenProvider.updateNavBarScreen(1),
           ),
           Consumer<CartScreenProvider>(
             builder: (context, cartProvider, _) {
@@ -40,7 +40,7 @@ class CustomBottomNav extends StatelessWidget {
                 label: 'Cart',
                 isSelected: selectedIndex == 2,
                 badgeCount: cartProvider.cartItem.length,
-                onTap: () => parentScreenProvider.setNavBarScreen(2),
+                onTap: () => parentScreenProvider.updateNavBarScreen(2),
 
               );
             },
@@ -50,7 +50,7 @@ class CustomBottomNav extends StatelessWidget {
             label: 'QR Scan',
             isSelected: selectedIndex == 3,
             showDot: false,
-            onTap: () => parentScreenProvider.setNavBarScreen(3),
+            onTap: () => parentScreenProvider.updateNavBarScreen(3),
           ),
         ],
       ),

@@ -1,11 +1,14 @@
 import 'package:dine_hive/core/constant/spacing.dart';
+import 'package:dine_hive/core/route/app_route_constant.dart';
+import 'package:dine_hive/core/services/firebase_service/auth_services.dart';
 import 'package:dine_hive/src/data/models/user_model.dart';
-import 'package:dine_hive/src/data/static_user_data.dart';
+import 'package:dine_hive/src/data/dummy_data/static_user_data.dart';
 import 'package:dine_hive/src/features/user/user_profile_screen/widgets/menu_card_widget.dart';
 import 'package:dine_hive/src/features/user/user_profile_screen/widgets/profile_app_bar_widget.dart';
 import 'package:dine_hive/src/features/user/user_profile_screen/widgets/user_profile_photo_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 class UserProfileScreen extends StatefulWidget {
   const UserProfileScreen({super.key, this.userId = 'user123'});
@@ -25,7 +28,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   void onTapBookingHistory() {}
   void onTapCoupons() {}
   void onTapSupports() {}
-  void onTapLogOut() {}
+  void onTapLogOut() {
+    AuthService authService =AuthService();
+    authService.signOut();
+    context.go(AppRouteConstant.signInScreen);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +46,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ProfileAppBarWidget(userModel: userModel,),
+              ProfileAppBarWidget(
+                userModel: userModel,
+              ),
               UserProfilePhotoWidget(
                 userModel: userModel,
               ),

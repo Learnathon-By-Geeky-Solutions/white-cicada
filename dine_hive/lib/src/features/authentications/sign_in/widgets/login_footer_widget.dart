@@ -16,7 +16,7 @@ class LoginFooterWidget extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: ()=> context.go(AppRouteConstant.signupScreen),
+          onTap: ()=> context.push(AppRouteConstant.signupScreen),
           child: Text.rich(TextSpan(
               text: AppText.newToDineHive,
               style: textTheme.bodyMedium!,
@@ -40,7 +40,7 @@ class LoginFooterWidget extends StatelessWidget {
                   Gap(AppSpacing.screenWidth(context) * 0.05),
                   Text(
                     AppText.continueWithGoogle,
-                    style: textTheme.titleLarge!.copyWith(color: whiteColor),
+                    style: textTheme.titleLarge!.copyWith(color: AppColors.whiteColor),
                   ),
                 ],
               )),
