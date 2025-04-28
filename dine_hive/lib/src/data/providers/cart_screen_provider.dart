@@ -1,6 +1,7 @@
 import 'package:dine_hive/src/data/models/food_model.dart';
 import 'package:dine_hive/src/data/models/order_model.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 
 class CartScreenProvider extends ChangeNotifier {
   /// Cart item list
@@ -72,6 +73,42 @@ class CartScreenProvider extends ChangeNotifier {
       subTotalPrice = subTotalPrice +(_cartItem[i].quantity*_cartItem[i].price);
     }
     totalPrice = subTotalPrice + tablePrice;
+    notifyListeners();
+  }
+
+
+  /// select time & date slot
+  DateTime _focusedDay = DateTime.now();
+  DateTime? _selectedDay;
+  String? _selectedTimeSlot;
+  List<String> _timeSlots= [];
+  DateTime get  focusedDay => _focusedDay;
+  DateTime? get  selectedDay => _selectedDay;
+  String? get  selectedTimeSlot => _selectedTimeSlot;
+  List<String> get  timeSlots => _timeSlots;
+
+  void generateTimeSlots() {
+    List<String> slots = [];
+    DateTime startTime = DateTime(0, 0, 0, 9, 30); // 9:00 AM
+    DateTime endTime = DateTime(0, 0, 0, 18, 0);  // 6:00 PM
+
+    while (startTime.isBefore(endTime)) {
+      slots.add(DateFormat.jm().format(startTime));
+      startTime = startTime.add(const Duration(minutes: 30));
+    }
+    _timeSlots = slots;
+    notifyListeners();
+  }
+
+  void daySelection(DateTime selectedDay,DateTime focusedDay){
+    _selectedDay = selectedDay;
+    _focusedDay = focusedDay;
+    generateTimeSlots();
+    notifyListeners();
+  }
+
+  selectedSlot(String slot){
+    _selectedTimeSlot = slot;
     notifyListeners();
   }
 

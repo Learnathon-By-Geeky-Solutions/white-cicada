@@ -2,13 +2,14 @@ import 'dart:math';
 import 'package:dine_hive/core/constant/images.dart';
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/constant/texts.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
+
 import '../../../../../core/theme/src/theme_extensions/color_palette.dart';
-import '../../../../data/dummy_data/static_data.dart';
-import '../../../../data/models/restaurent_model.dart';
-import '../../../../data/providers/cart_screen_provider.dart';
+import '../../../../data/providers/choose_table_provider.dart';
+import '../../../../data/static_restaurant_data.dart';
 
 class ChooseTableScreenHeader extends StatefulWidget {
   const ChooseTableScreenHeader({super.key});
@@ -18,16 +19,10 @@ class ChooseTableScreenHeader extends StatefulWidget {
 }
 
 class _ChooseTableScreenHeaderState extends State<ChooseTableScreenHeader> {
-  RestaurantModel? getRestaurantById(String id, List<RestaurantModel> restaurants) {
-    try {
-      return restaurants.firstWhere((restaurant) => restaurant.restaurantId == id);
-    } catch (e) {
-      return null;
-    }
-  }
   @override
   Widget build(BuildContext context) {
-    RestaurantModel? restaurants = getRestaurantById(Provider.of<CartScreenProvider>(context).restaurantId, restaurantList);
+    final chooseTableProvider = Provider.of<ChooseTableProvider>(context, listen: false);
+    final restaurants = chooseTableProvider.getRestaurantById("1", dummyRestaurants);
     double height = AppSpacing.screenHeight(context);
     double width = AppSpacing.screenWidth(context);
     TextTheme textTheme = Theme.of(context).textTheme;

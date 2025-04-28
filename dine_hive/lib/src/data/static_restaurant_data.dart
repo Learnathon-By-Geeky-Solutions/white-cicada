@@ -1,22 +1,15 @@
-import '../models/food_model.dart';
-import '../models/restaurant_model.dart';
+import 'models/restaurant_model.dart';
 
-List<RestaurantModel> restaurantList = [
+List<RestaurantModel> dummyRestaurants = [
   RestaurantModel(
     restaurantId: "1",
     restaurantName: "The Gourmet Hub",
     restaurantCode: 101,
-    restaurantDescription:
-        "A fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\n",
-    img: "https://example.com/gourmet_hub.jpg",
+    restaurantDescription: "A fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\nA fine dining experience with international cuisine.\n",
+    img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/23/7f/39/plus-de-1000-references.jpg?w=1000&h=-1&s=1",
     isPopular: false,
     listOfTable: ["T1", "T2", "T3", "T4"],
-    listOfFood: [
-      "Grilled Salmon",
-      "Beef Wellington",
-      "Truffle Pasta",
-      "Lobster Bisque"
-    ],
+    listOfFood: ["Grilled Salmon", "Beef Wellington", "Truffle Pasta", "Lobster Bisque"],
     ratings: [2.8, 2.7, 2.9, 3.0, 2.6],
     orderQty: 120,
   ),
@@ -40,12 +33,7 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/ocean_breeze.jpg",
     isPopular: false,
     listOfTable: ["T1", "T2"],
-    listOfFood: [
-      "Grilled Lobster",
-      "Shrimp Scampi",
-      "Fish Tacos",
-      "Seafood Paella"
-    ],
+    listOfFood: ["Grilled Lobster", "Shrimp Scampi", "Fish Tacos", "Seafood Paella"],
     ratings: [4.3, 4.2, 4.5, 4.6, 4.4],
     orderQty: 67,
   ),
@@ -57,12 +45,7 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/mountain_cafe.jpg",
     isPopular: true,
     listOfTable: ["T1", "T2", "T3"],
-    listOfFood: [
-      "Cappuccino",
-      "Blueberry Muffin",
-      "Avocado Toast",
-      "Carrot Cake"
-    ],
+    listOfFood: ["Cappuccino", "Blueberry Muffin", "Avocado Toast", "Carrot Cake"],
     ratings: [4.7, 4.8, 4.6, 4.5, 4.9],
     orderQty: 85,
   ),
@@ -86,12 +69,7 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/sunset_pizzeria.jpg",
     isPopular: false,
     listOfTable: ["T1", "T2", "T3", "T4"],
-    listOfFood: [
-      "Margherita Pizza",
-      "Pepperoni Pizza",
-      "BBQ Chicken Pizza",
-      "Four Cheese Pizza"
-    ],
+    listOfFood: ["Margherita Pizza", "Pepperoni Pizza", "BBQ Chicken Pizza", "Four Cheese Pizza"],
     ratings: [4.3, 4.5, 4.4, 4.6, 4.2],
     orderQty: 74,
   ),
@@ -103,12 +81,7 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/royal_thai.jpg",
     isPopular: true,
     listOfTable: ["T1", "T2", "T3", "T4", "T5", "T6"],
-    listOfFood: [
-      "Pad Thai",
-      "Green Curry",
-      "Tom Yum Soup",
-      "Mango Sticky Rice"
-    ],
+    listOfFood: ["Pad Thai", "Green Curry", "Tom Yum Soup", "Mango Sticky Rice"],
     ratings: [4.8, 4.9, 4.7, 4.8, 4.9],
     orderQty: 105,
   ),
@@ -116,17 +89,11 @@ List<RestaurantModel> restaurantList = [
     restaurantId: "8",
     restaurantName: "Green Leaf Vegan",
     restaurantCode: 108,
-    restaurantDescription:
-        "100% plant-based dishes with farm-fresh ingredients.",
+    restaurantDescription: "100% plant-based dishes with farm-fresh ingredients.",
     img: "https://example.com/green_leaf.jpg",
     isPopular: false,
     listOfTable: ["T1", "T2", "T3"],
-    listOfFood: [
-      "Vegan Burger",
-      "Quinoa Salad",
-      "Tofu Stir-fry",
-      "Vegan Brownies"
-    ],
+    listOfFood: ["Vegan Burger", "Quinoa Salad", "Tofu Stir-fry", "Vegan Brownies"],
     ratings: [4.6, 4.5, 4.4, 4.7, 4.3],
     orderQty: 62,
   ),
@@ -174,12 +141,7 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/rustic_table.jpg",
     isPopular: true,
     listOfTable: ["T1", "T2", "T3"],
-    listOfFood: [
-      "Shepherd's Pie",
-      "Roast Chicken",
-      "Mashed Potatoes",
-      "Apple Crumble"
-    ],
+    listOfFood: ["Shepherd's Pie", "Roast Chicken", "Mashed Potatoes", "Apple Crumble"],
     ratings: [4.6, 4.7, 4.8, 4.5, 4.4],
     orderQty: 90,
   ),
@@ -187,17 +149,11 @@ List<RestaurantModel> restaurantList = [
     restaurantId: "13",
     restaurantName: "The Pancake House",
     restaurantCode: 113,
-    restaurantDescription:
-        "Serving the fluffiest pancakes and breakfast classics.",
+    restaurantDescription: "Serving the fluffiest pancakes and breakfast classics.",
     img: "https://example.com/pancake_house.jpg",
     isPopular: false,
     listOfTable: ["T1", "T2"],
-    listOfFood: [
-      "Blueberry Pancakes",
-      "Banana Waffles",
-      "Omelette",
-      "French Toast"
-    ],
+    listOfFood: ["Blueberry Pancakes", "Banana Waffles", "Omelette", "French Toast"],
     ratings: [4.3, 4.2, 4.5, 4.4, 4.1],
     orderQty: 75,
   ),
@@ -209,12 +165,7 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/tandoori_nights.jpg",
     isPopular: true,
     listOfTable: ["T1", "T2", "T3", "T4"],
-    listOfFood: [
-      "Tandoori Chicken",
-      "Lamb Rogan Josh",
-      "Garlic Naan",
-      "Pani Puri"
-    ],
+    listOfFood: ["Tandoori Chicken", "Lamb Rogan Josh", "Garlic Naan", "Pani Puri"],
     ratings: [4.7, 4.6, 4.8, 4.9, 4.5],
     orderQty: 102,
   ),
@@ -226,12 +177,7 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/fusion_bites.jpg",
     isPopular: true,
     listOfTable: ["T1", "T2", "T3"],
-    listOfFood: [
-      "Sushi Burrito",
-      "Kimchi Tacos",
-      "Ramen Burger",
-      "Miso Glazed Salmon"
-    ],
+    listOfFood: ["Sushi Burrito", "Kimchi Tacos", "Ramen Burger", "Miso Glazed Salmon"],
     ratings: [4.8, 4.7, 4.9, 4.6, 4.5],
     orderQty: 88,
   ),
@@ -243,12 +189,7 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/cedar_steakhouse.jpg",
     isPopular: true,
     listOfTable: ["T1", "T2", "T3", "T4"],
-    listOfFood: [
-      "Filet Mignon",
-      "Ribeye Steak",
-      "Truffle Fries",
-      "Garlic Butter Shrimp"
-    ],
+    listOfFood: ["Filet Mignon", "Ribeye Steak", "Truffle Fries", "Garlic Butter Shrimp"],
     ratings: [4.9, 5.0, 4.8, 4.7, 4.6],
     orderQty: 125,
   ),
@@ -256,17 +197,11 @@ List<RestaurantModel> restaurantList = [
     restaurantId: "17",
     restaurantName: "Golden Wok",
     restaurantCode: 117,
-    restaurantDescription:
-        "Authentic Chinese flavors in a contemporary setting.",
+    restaurantDescription: "Authentic Chinese flavors in a contemporary setting.",
     img: "https://example.com/golden_wok.jpg",
     isPopular: false,
     listOfTable: ["T1", "T2", "T3"],
-    listOfFood: [
-      "Peking Duck",
-      "Kung Pao Chicken",
-      "Spring Rolls",
-      "Hot & Sour Soup"
-    ],
+    listOfFood: ["Peking Duck", "Kung Pao Chicken", "Spring Rolls", "Hot & Sour Soup"],
     ratings: [4.5, 4.6, 4.4, 4.3, 4.7],
     orderQty: 82,
   ),
@@ -274,8 +209,7 @@ List<RestaurantModel> restaurantList = [
     restaurantId: "18",
     restaurantName: "The Cozy Corner",
     restaurantCode: 118,
-    restaurantDescription:
-        "A peaceful spot for coffee lovers and book readers.",
+    restaurantDescription: "A peaceful spot for coffee lovers and book readers.",
     img: "https://example.com/cozy_corner.jpg",
     isPopular: true,
     listOfTable: ["T1", "T2"],
@@ -339,12 +273,7 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/downtown_burgers.jpg",
     isPopular: true,
     listOfTable: ["T1", "T2", "T3", "T4"],
-    listOfFood: [
-      "Cheeseburger",
-      "Bacon Burger",
-      "Veggie Burger",
-      "Sweet Potato Fries"
-    ],
+    listOfFood: ["Cheeseburger", "Bacon Burger", "Veggie Burger", "Sweet Potato Fries"],
     ratings: [4.8, 4.9, 4.7, 4.6, 4.5],
     orderQty: 130,
   ),
@@ -356,181 +285,8 @@ List<RestaurantModel> restaurantList = [
     img: "https://example.com/blue_lagoon.jpg",
     isPopular: true,
     listOfTable: ["T1", "T2", "T3"],
-    listOfFood: [
-      "Grilled Snapper",
-      "Pineapple Shrimp",
-      "Coconut Rice",
-      "Mojito"
-    ],
+    listOfFood: ["Grilled Snapper", "Pineapple Shrimp", "Coconut Rice", "Mojito"],
     ratings: [4.6, 4.7, 4.8, 4.5, 4.4],
     orderQty: 112,
   ),
-];
-
-List<FoodModel> foodList = [
-  FoodModel(
-    foodId: "F1003",
-    restaurantId: "2",
-    name: "Chicken Burger",
-    category: "Burger",
-    imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUNBZ4MzsbblFrfjrDHM3VYcJmJoPAFTSWvMCuM_vaBzYauX42gdChNeY1wGdgFcI1x5w&usqp=CAU",
-    price: 8.99,
-    discount: 15.0,
-  ),
-  FoodModel(
-    foodId: "F1001",
-    restaurantId: "1",
-    name: "Margherita Pizza",
-    category: "Pizza",
-    imageUrl:
-        "https://secretrecipebd.com/wp-content/uploads/2021/07/vegatable_pizza.jpg",
-    price: 12.99,
-    discount: 10.0,
-  ),
-  FoodModel(
-    foodId: "F1002",
-    restaurantId: "1",
-    name: "Pepperoni Pizza",
-    category: "Pizza",
-    imageUrl:
-        "https://secretrecipebd.com/wp-content/uploads/2021/07/vegatable_pizza.jpg",
-    price: 14.99,
-    discount: 5.0,
-  ),
-  FoodModel(
-    foodId: "F1011",
-    restaurantId: "7",
-    name: "Hyderabadi Biryani",
-    category: "Biryani",
-    imageUrl:
-        "https://www.thespruceeats.com/thmb/XDBL9gA6A6nYWUdsRZ3QwH084rk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-chicken-biryani-recipe-7367850-hero-A-ed211926bb0e4ca1be510695c15ce111.jpg",
-    price: 15.99,
-    discount: 10.0,
-  ),
-  FoodModel(
-    foodId: "F1008",
-    restaurantId: "3",
-    name: "Pasta Alfredo",
-    category: "Pasta",
-    imageUrl:
-        "https://www.spicebangla.com/wp-content/uploads/2024/08/Spicy-Pasta-recipe-optimised-scaled.webp",
-    price: 16.99,
-    discount: 10.0,
-  ),
-  FoodModel(
-    foodId: "F1007",
-    restaurantId: "5",
-    name: "Sushi Platter",
-    category: "Sushi",
-    imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwG8x3ldhKYyRsyd_2qtPBAS9PRQJKzpj9xw&s",
-    price: 29.99,
-    discount: 12.0,
-  ),
-  FoodModel(
-    foodId: "F1004",
-    restaurantId: "3",
-    name: "Beef Steak",
-    category: "Steak",
-    imageUrl:
-        "https://thebigmansworld.com/wp-content/uploads/2023/07/sirloin-steak-recipe.jpg",
-    price: 24.99,
-    discount: 10.0,
-  ),
-  FoodModel(
-    foodId: "F1012",
-    restaurantId: "8",
-    name: "Chicken Shawarma",
-    category: "Shawarma",
-    imageUrl: "https://i.ytimg.com/vi/aWWF16IkI6Q/sddefault.jpg",
-    price: 10.99,
-    discount: 8.0,
-  ),
-  FoodModel(
-    foodId: "F1013",
-    restaurantId: "9",
-    name: "Mexican Tacos",
-    category: "Tacos",
-    imageUrl:
-        "https://www.thecookierookie.com/wp-content/uploads/2024/05/street-tacos-recipe-2.jpg",
-    price: 9.99,
-    discount: 7.0,
-  ),
-  FoodModel(
-    foodId: "F1014",
-    restaurantId: "10",
-    name: "Vanilla Ice Cream",
-    category: "Ice Cream",
-    imageUrl:
-        "https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11.jpg",
-    price: 4.99,
-    discount: 10.0,
-  ),
-  FoodModel(
-    foodId: "F1015",
-    restaurantId: "10",
-    name: "Strawberry Cheesecake",
-    category: "Cheesecake",
-    imageUrl:
-        "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_1500,ar_3:2/k%2FPhoto%2FSeries%2F2024-07-how-to-make-perfect-cheesecake%2Fhow-to-make-perfect-cheesecake-319",
-    price: 6.99,
-    discount: 15.0,
-  ),
-];
-
-final List<Map<String, String>> popularCategories = [
-  {
-    "name": "All",
-    "image": "",
-  },
-  {
-    "name": "Burger",
-    "image":
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUNBZ4MzsbblFrfjrDHM3VYcJmJoPAFTSWvMCuM_vaBzYauX42gdChNeY1wGdgFcI1x5w&usqp=CAU"
-  },
-  {
-    "name": "Pizza",
-    "image":
-        "https://secretrecipebd.com/wp-content/uploads/2021/07/vegatable_pizza.jpg"
-  },
-  {
-    "name": "Biryani",
-    "image":
-        "https://www.thespruceeats.com/thmb/XDBL9gA6A6nYWUdsRZ3QwH084rk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-chicken-biryani-recipe-7367850-hero-A-ed211926bb0e4ca1be510695c15ce111.jpg"
-  },
-  {
-    "name": "Pasta",
-    "image":
-        "https://www.spicebangla.com/wp-content/uploads/2024/08/Spicy-Pasta-recipe-optimised-scaled.webp"
-  },
-  {
-    "name": "Sushi",
-    "image":
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwG8x3ldhKYyRsyd_2qtPBAS9PRQJKzpj9xw&s"
-  },
-  {
-    "name": "Steak",
-    "image":
-        "https://thebigmansworld.com/wp-content/uploads/2023/07/sirloin-steak-recipe.jpg"
-  },
-  {
-    "name": "Shawarma",
-    "image": "https://i.ytimg.com/vi/aWWF16IkI6Q/sddefault.jpg"
-  },
-  {
-    "name": "Tacos",
-    "image":
-        "https://www.thecookierookie.com/wp-content/uploads/2024/05/street-tacos-recipe-2.jpg"
-  },
-  {
-    "name": "Ice Cream",
-    "image":
-        "https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11.jpg"
-  },
-  {
-    "name": "Cheesecake",
-    "image":
-        "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_1500,ar_3:2/k%2FPhoto%2FSeries%2F2024-07-how-to-make-perfect-cheesecake%2Fhow-to-make-perfect-cheesecake-319"
-  },
 ];

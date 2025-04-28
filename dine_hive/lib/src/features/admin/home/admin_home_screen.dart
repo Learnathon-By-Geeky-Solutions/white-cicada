@@ -12,14 +12,16 @@ class AdminHomeScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Admin Home'),
-            Gap(20),
+            const Text('Admin Home'),
+            const Gap(20),
             TextButton(onPressed: (){
               AuthService authService = AuthService();
               authService.signOut();
               context.go(AppRouteConstant.signInScreen);
-            }, child: Text('Logout'))
+            }, child: const Text('Logout'))
           ],
         ),
       ),

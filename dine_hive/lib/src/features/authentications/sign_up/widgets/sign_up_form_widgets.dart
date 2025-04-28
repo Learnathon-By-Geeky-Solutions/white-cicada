@@ -25,6 +25,7 @@ class SignUpFormWidgets extends StatelessWidget {
         key: formKey,
         child: Column(
           children: [
+            ///name field
             TextFormField(
               controller: userProvider.nameController,
               validator: (value) {
@@ -38,6 +39,8 @@ class SignUpFormWidgets extends StatelessWidget {
                   prefixIcon: Icon(Icons.person), hintText: AppText.name),
             ),
             Gap(AppSpacing.screenHeight(context) * 0.02),
+
+            ///email field
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               controller: userProvider.emailController,
@@ -52,6 +55,8 @@ class SignUpFormWidgets extends StatelessWidget {
                   hintText: AppText.emailAddress),
             ),
             Gap(AppSpacing.screenHeight(context) * 0.02),
+
+            ///password field
             TextFormField(
               obscureText: true,
               controller: userProvider.passwordController,
@@ -85,7 +90,7 @@ class SignUpFormWidgets extends StatelessWidget {
                           .then((onValue) {
                         ///Storing user data
                         Provider.of<UserProvider>(context, listen: false)
-                            .saveUser()
+                            .createUser()
                             .then((onValue) {
                           ///Navigate to parent Screen
                           context.go(AppRouteConstant.parentScreen);

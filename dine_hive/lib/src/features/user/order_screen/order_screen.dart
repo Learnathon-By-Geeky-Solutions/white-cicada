@@ -21,7 +21,10 @@ class OrderScreen extends StatelessWidget {
                 appBarTitle: Provider.of<OrderScreenProvider>(context).appBarTitle[
                     Provider.of<OrderScreenProvider>(context).currentIndex],
               ),
+              /// header step progress bar
               const ProgressWidget(),
+
+              /// showing page view
               Expanded(
                 child: Consumer<OrderScreenProvider>(
                   builder: (_, oderScreenProvider, __) {

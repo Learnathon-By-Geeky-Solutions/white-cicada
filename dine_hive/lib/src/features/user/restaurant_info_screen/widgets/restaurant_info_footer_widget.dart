@@ -1,7 +1,7 @@
 import 'package:dine_hive/core/constant/texts.dart';
-import 'package:dine_hive/core/widgets/custom_bottom_bar.dart';
-import 'package:dine_hive/src/data/models/restaurent_model.dart';
 import 'package:flutter/material.dart';
+import '../../../../../core/widgets/custom_bottom_bar.dart';
+import '../../../../data/models/restaurant_model.dart';
 
 class RestaurantInfoFooterWidget extends StatefulWidget {
   const RestaurantInfoFooterWidget({super.key, this.restaurant});

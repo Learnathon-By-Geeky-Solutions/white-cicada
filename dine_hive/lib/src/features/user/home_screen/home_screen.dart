@@ -1,4 +1,3 @@
-import 'package:dine_hive/core/theme/src/theme_extensions/color_palette.dart';
 import 'package:dine_hive/src/features/user/home_screen/widgets/category_selection_menu.dart';
 import 'package:dine_hive/src/features/user/home_screen/widgets/popular_hotel_part.dart';
 import 'package:flutter/material.dart';
@@ -6,11 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/constant/key.dart';
 import '../../../../core/constant/spacing.dart';
-import '../../../../core/widgets/food_item_card.dart';
-import '../../../../core/widgets/popular_hotel_card.dart';
-import '../../../data/models/restaurent_model.dart';
 import '../../../data/providers/home_screen_provider.dart';
-import '../../../data/dummy_data/static_data.dart';
 import 'widgets/home_app_bar.dart';
 import 'widgets/home_drawer.dart';
 import 'widgets/show_food_item_part.dart';

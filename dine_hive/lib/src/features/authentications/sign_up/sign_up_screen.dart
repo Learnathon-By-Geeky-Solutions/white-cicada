@@ -18,10 +18,16 @@ class SignUpScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
+            ///sign up header widget
             const SignUpHeaderWidgets(),
             Gap(AppSpacing.screenHeight(context) * 0.05),
+
+            ///signup form widget
             const SignUpFormWidgets(),
             Gap(AppSpacing.screenHeight(context) * 0.01),
+
+            /// footer
             const SignUpFooterWidget()
           ],
         ),

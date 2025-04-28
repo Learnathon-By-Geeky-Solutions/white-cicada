@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../models/user_model.dart';
 import '../repositories/user_repository/user_repository.dart';
 
@@ -38,7 +37,7 @@ class UserProvider with ChangeNotifier {
   }
 
   /// Create or update user
-  Future<void> saveUser() async {
+  Future<void> createUser() async {
     try {
       FirebaseAuth fireAuth =FirebaseAuth.instance;
       String uid = fireAuth.currentUser!.uid.toString();
@@ -56,6 +55,7 @@ class UserProvider with ChangeNotifier {
       debugPrint('user Provider Calling');
       await _userRepository.saveUser(userModel);
       _user = userModel;
+      debugPrint('User created');
       notifyListeners();
     } catch (e) {
       debugPrint("Save user error: $e");
