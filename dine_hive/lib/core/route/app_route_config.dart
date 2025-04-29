@@ -19,7 +19,7 @@ import 'app_route_constant.dart';
 
 class AppRouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: AppRouteConstant.chooseTableScreen,
+    initialLocation: AppRouteConstant.parentScreen,
     routes: [
       GoRoute(
           name: AppRouteConstant.splashScreen,

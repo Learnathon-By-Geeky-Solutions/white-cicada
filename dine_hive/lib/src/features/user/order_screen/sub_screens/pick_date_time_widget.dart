@@ -83,7 +83,7 @@ class DateTimePickerContainer extends StatelessWidget {
               cartProvider.selectedTimeSlot!=null?SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(onPressed: (){
-                  Provider.of<OrderScreenProvider>(context).updatePage(1);
+                  Provider.of<OrderScreenProvider>(context,listen: false).updatePage(1);
                 }, child: Text('Next',style: Theme.of(context).textTheme.titleSmall!.copyWith(color: AppColors.whiteColor),)),
               ):const SizedBox()
             ],

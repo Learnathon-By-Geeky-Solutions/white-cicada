@@ -85,6 +85,7 @@ class FoodItemCard extends StatelessWidget {
               child: Text(
                 foodModel.name,
                 style: textTheme.titleSmall,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
 
@@ -97,7 +98,7 @@ class FoodItemCard extends StatelessWidget {
                 color: AppColors.homeBodyTextColor,
                 fontWeight: FontWeight.w500,
               ),
-              maxLines: 2,
+              maxLines: isInCart?1:2,
               overflow: TextOverflow.ellipsis,
             ),
 
@@ -120,14 +121,16 @@ class FoodItemCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "\$${foodModel.price.toStringAsFixed(2)}",
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange,
+                Expanded(
+                  child: Text(
+                    "\$${foodModel.price.toStringAsFixed(2)}",
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.orange,
+                    ),
+                    overflow: TextOverflow.visible,
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
 
                 /// if card in home screen skip the part but if it in choose food screen
