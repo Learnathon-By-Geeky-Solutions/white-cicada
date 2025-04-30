@@ -99,7 +99,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 
   Divider _buildDivider() {
     return const Divider(
-      color: Colors.black,
+      color: Colors.black45,
       thickness: 1,
     );
   }

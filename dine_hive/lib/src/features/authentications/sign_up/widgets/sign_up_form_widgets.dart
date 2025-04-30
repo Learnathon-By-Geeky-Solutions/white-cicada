@@ -90,7 +90,7 @@ class SignUpFormWidgets extends StatelessWidget {
                           .then((onValue) {
                         ///Storing user data
                         Provider.of<UserProvider>(context, listen: false)
-                            .saveUser()
+                            .createUser()
                             .then((onValue) {
                           ///Navigate to parent Screen
                           context.go(AppRouteConstant.parentScreen);
