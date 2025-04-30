@@ -14,22 +14,26 @@ class SignUpScreen extends StatelessWidget {
       resizeToAvoidBottomInset: true,
       body: Padding(
         padding: const EdgeInsets.all(AppSpacing.pagePadding),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
 
-            ///sign up header widget
-            const SignUpHeaderWidgets(),
-            Gap(AppSpacing.screenHeight(context) * 0.05),
+                ///sign up header widget
+                const SignUpHeaderWidgets(),
+                Gap(AppSpacing.screenHeight(context) * 0.05),
 
-            ///signup form widget
-            const SignUpFormWidgets(),
-            Gap(AppSpacing.screenHeight(context) * 0.01),
+                ///signup form widget
+                const SignUpFormWidgets(),
+                Gap(AppSpacing.screenHeight(context) * 0.01),
 
-            /// footer
-            const SignUpFooterWidget()
-          ],
+                /// footer
+                const SignUpFooterWidget()
+              ],
+            ),
+          ),
         ),
       ),
     );

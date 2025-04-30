@@ -21,4 +21,5 @@ class RestaurantModel {
       required this.listOfFood,
       required this.ratings,
       required this.orderQty});
+
 }

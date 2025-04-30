@@ -1,4 +1,6 @@
 import 'package:dine_hive/core/route/app_route_constant.dart';
+import 'package:dine_hive/core/services/firebase_service/auth_services.dart';
+import 'package:dine_hive/core/utils/toast_messages.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -12,11 +14,13 @@ class ForgetPassFormWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
+    TextEditingController emailController =TextEditingController();
     return Column(
       children: [
-        const TextField(
+        TextFormField(
+          controller: emailController,
           keyboardType: TextInputType.emailAddress,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               prefixIcon: Icon(Icons.email), hintText: AppText.emailAddress),
         ),
         Gap(AppSpacing.screenHeight(context) * 0.03),
@@ -34,7 +38,11 @@ class ForgetPassFormWidgets extends StatelessWidget {
                   )
               ),
               ElevatedButton(
-                  onPressed: () {context.go(AppRouteConstant.initialRoute);},
+                  onPressed: () {
+                    AuthService authService = AuthService();
+                    authService.sendPasswordResetEmail(emailController.text.toString());
+                    ToastService.showSnackbar(context, 'Check your email box to reset');
+                  },
                   child: Row(
                     children: [
                       Text(

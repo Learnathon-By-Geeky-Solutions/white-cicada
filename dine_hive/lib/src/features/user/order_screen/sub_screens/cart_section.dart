@@ -1,6 +1,7 @@
 import 'package:dine_hive/core/constant/images.dart';
 import 'package:dine_hive/core/constant/spacing.dart';
 import 'package:dine_hive/core/theme/src/theme_extensions/color_palette.dart';
+import 'package:dine_hive/core/utils/utils.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -48,6 +49,9 @@ class CartSection extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
+                        buildCartPriceRow('Restaurant Name', cartProvider.restaurantName),
+                        buildCartPriceRow('Schedule Date', Utils.formatDate(formatType: 'Ms-Dd-Yd', dateTime: cartProvider.selectedDay??DateTime.now()),),
+                        buildCartPriceRow('Schedule Date', cartProvider.selectedTimeSlot??'Now'),
                         const SizedBox(height: 5),
                         buildCartPriceRow('Sub-Total', cartProvider.subTotalPrice.toStringAsFixed(2)),
                         const SizedBox(height: 5),

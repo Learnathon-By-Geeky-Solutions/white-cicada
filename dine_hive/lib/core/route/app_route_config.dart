@@ -10,16 +10,17 @@ import '../../src/features/user/choose_table/choose_table_screen.dart';
 import '../../src/features/user/edit_user_profile_screen/edit_user_profile_screen.dart';
 import '../../src/features/user/home_screen/home_screen.dart';
 import '../../src/features/user/order_screen/order_screen.dart';
+import '../../src/features/user/schedule_time_screen/schedule_time_screen.dart';
 import '../../src/features/user/parent_screen/parent_screen.dart';
 import '../../src/features/user/payment_gateway_selection_screen/payment_gateway_selection_screen.dart';
-import '../../src/features/user/payment_successful_screen/payment_successful_screen.dart';
+import '../../src/features/user/order_screen/sub_screens/payment_successful.dart';
 import '../../src/features/user/restaurant_info_screen/restaurant_info_screen.dart';
 import '../constant/texts.dart';
 import 'app_route_constant.dart';
 
 class AppRouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: AppRouteConstant.chooseTableScreen,
+    initialLocation: AppRouteConstant.initialRoute,
     routes: [
       GoRoute(
           name: AppRouteConstant.splashScreen,
@@ -90,7 +91,7 @@ class AppRouteConfig {
           name: AppRouteConstant.paymentSuccessful,
           path: AppRouteConstant.paymentSuccessful,
           pageBuilder: (context, state) {
-            return const MaterialPage(child: PaymentSuccessfulScreen());
+            return const MaterialPage(child: PaymentSuccessful());
           }),
       GoRoute(
           name: AppRouteConstant.adminHomeScreen,
@@ -103,6 +104,12 @@ class AppRouteConfig {
           path: AppRouteConstant.sellerHomeScreen,
           pageBuilder: (context, state) {
             return const MaterialPage(child: SellerHomeScreen());
+          }),
+      GoRoute(
+          name: AppRouteConstant.scheduleTimeScreen,
+          path: AppRouteConstant.scheduleTimeScreen,
+          pageBuilder: (context, state) {
+            return const MaterialPage(child: ScheduleTimeScreen());
           }),
     ],
   );

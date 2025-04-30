@@ -1,10 +1,14 @@
 import 'dart:async';
 import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:dine_hive/core/services/stripe_service/stripe_key.dart';
+import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
+import 'package:dine_hive/src/data/providers/order_screen_provider.dart';
+import 'package:dine_hive/src/features/user/order_screen/order_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class StripeServices {
   StripeServices._();
@@ -74,7 +78,7 @@ class StripeServices {
       await Stripe.instance.presentPaymentSheet();
       debugPrint('Payment confirmed! Navigating...');
       if (context.mounted) {
-        context.go(AppRouteConstant.paymentSuccessful);
+        Provider.of<OrderScreenProvider>(context,listen: false).updatePage(2);
       }
     } catch (error) {
       debugPrint("Error in payment processing: $error");

@@ -25,8 +25,8 @@ class ChooseFoodSection extends StatelessWidget {
             itemCount: foodList.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
+              mainAxisSpacing: 5,
+              crossAxisSpacing: 5,
               childAspectRatio: 0.64,
             ),
             itemBuilder: (context, index) {
@@ -52,30 +52,34 @@ class ChooseFoodSection extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              GestureDetector(
-                onTap: () {
-                  Provider.of<OrderScreenProvider>(context, listen: false)
-                      .updatePage(1);
-                  cartProvider.calculateTotalPrice();
-                },
-                child: Text(
-                  "Skip for now",
-                  style: textTheme.bodyMedium,
+              Expanded(
+                child: GestureDetector(
+                  onTap: () {
+                    Provider.of<OrderScreenProvider>(context, listen: false)
+                        .updatePage(1);
+                    cartProvider.calculateTotalPrice();
+                  },
+                  child: Text(
+                    "Skip for now",
+                    style: textTheme.bodyMedium,
+                  ),
                 ),
               ),
-              CustomBottomButtons(
-                  title: 'Order Now',
-                  suffixIcon: Icons.keyboard_arrow_right_outlined,
-                  buttonColor:
-                      cartProvider.cartItem.isEmpty ? AppColors.whiteShadeColor : null,
-                  onTappedAction: () {
-                    cartProvider.cartItem.isEmpty
-                        ? ToastService.showSnackbar(
-                            context, "Select at least one")
-                        : Provider.of<OrderScreenProvider>(context, listen: false)
-                            .updatePage(1);
-                    cartProvider.calculateTotalPrice();
-                  }),
+              Expanded(
+                child: CustomBottomButtons(
+                    title: 'Order Now',
+                    suffixIcon: Icons.keyboard_arrow_right_outlined,
+                    buttonColor:
+                        cartProvider.cartItem.isEmpty ? AppColors.whiteShadeColor : null,
+                    onTappedAction: () {
+                      cartProvider.cartItem.isEmpty
+                          ? ToastService.showSnackbar(
+                              context, "Select at least one")
+                          : Provider.of<OrderScreenProvider>(context, listen: false)
+                              .updatePage(1);
+                      cartProvider.calculateTotalPrice();
+                    }),
+              ),
             ],
           ),
         ),

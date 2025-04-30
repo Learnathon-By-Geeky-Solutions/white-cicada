@@ -55,21 +55,24 @@ class CartItemCard extends StatelessWidget {
                     Text(
                       cartProvider.cartItem[index].name,
                       style: textTheme.titleSmall,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       cartProvider.cartItem[index].category,
                       style: textTheme.labelLarge,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       '\$ ${cartProvider.cartItem[index].price}',
                       style: textTheme.titleSmall,
+                      overflow: TextOverflow.ellipsis,
                     )
                   ],
                 ),
               ],
             ),
             Row(
-              spacing: 10,
+              spacing: 5,
               children: [
                 CartIconButton(
                   icon: Icon(

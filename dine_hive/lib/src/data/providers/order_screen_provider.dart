@@ -1,8 +1,7 @@
-import 'package:dine_hive/src/features/user/order_screen/sub_screens/pick_date_time_widget.dart';
+import 'package:dine_hive/src/features/user/order_screen/sub_screens/payment_successful.dart';
 import 'package:flutter/cupertino.dart';
 import '../../features/user/order_screen/sub_screens/cart_section.dart';
 import '../../features/user/order_screen/sub_screens/choose_food_section.dart';
-import '../../features/user/order_screen/sub_screens/payment_method_selection.dart';
 
 class OrderScreenProvider extends ChangeNotifier {
 
@@ -11,9 +10,9 @@ class OrderScreenProvider extends ChangeNotifier {
   int _currentIndex = 0;
   final PageController _pageController = PageController();
   final List<Widget> _carouselItems = [
-    const DateTimePickerContainer(),
     const ChooseFoodSection(),
     const CartSection(),
+    const PaymentSuccessful()
   ];
   final List<String>_appBarTitle=[
     'Select a schedule',
