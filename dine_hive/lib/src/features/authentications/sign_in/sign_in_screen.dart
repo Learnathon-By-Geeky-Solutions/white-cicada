@@ -13,16 +13,20 @@ class SignInScreen extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(AppSpacing.pagePadding),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const LoginHeaderWidgets(),
-            Gap(AppSpacing.screenHeight(context) * 0.05),
-            const LoginFormWidgets(),
-            Gap(AppSpacing.screenHeight(context) * 0.01),
-            const LoginFooterWidget()
-          ],
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const LoginHeaderWidgets(),
+                Gap(AppSpacing.screenHeight(context) * 0.05),
+                const LoginFormWidgets(),
+                Gap(AppSpacing.screenHeight(context) * 0.01),
+                const LoginFooterWidget()
+              ],
+            ),
+          ),
         ),
       ),
     );

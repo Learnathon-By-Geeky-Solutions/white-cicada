@@ -16,7 +16,7 @@ class SignUpFooterWidget extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: ()=> context.go(AppRouteConstant.initialRoute),
+          onTap: ()=> context.go(AppRouteConstant.signInScreen),
           child: Text.rich(TextSpan(
               text: AppText.alreadyHaveAnAccount,
               style: textTheme.bodyMedium!,

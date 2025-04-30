@@ -16,4 +16,5 @@ class AppRouteConstant{
   static const String splashScreen= '/splashScreen';
   static const String adminHomeScreen= '/adminHomeScreen';
   static const String sellerHomeScreen= '/sellerHomeScreen';
+  static const String scheduleTimeScreen= '/scheduleTimeScreen';
 }

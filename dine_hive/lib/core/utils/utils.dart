@@ -13,7 +13,8 @@ class Utils{
   /// D,M,Y,W refers to Date , Month Year, days of week
   /// d pass as digit & s pass as String
   static String formatDate(
-      DateTime dateTime, {
+      {
+        required DateTime dateTime,
         String formatType = 'Yd-Md-Dd',
       }) {
     switch (formatType) {

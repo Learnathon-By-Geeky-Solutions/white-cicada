@@ -48,16 +48,12 @@ class CustomBottomBarWidget extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () =>
-                          context.push(AppRouteConstant.chooseTableScreen),
-                      child: CustomBottomButtons(
-                        title: title2,
-                        suffixIcon: sIcon,
-                        onTappedAction: () {
-                          context.push(AppRouteConstant.chooseTableScreen);
-                        },
-                      ),
+                    child: CustomBottomButtons(
+                      title: title2,
+                      suffixIcon: sIcon,
+                      onTappedAction: () {
+                        context.push(AppRouteConstant.scheduleTimeScreen);
+                      },
                     ),
                   ),
                 ]),

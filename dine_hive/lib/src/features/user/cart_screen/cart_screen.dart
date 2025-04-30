@@ -13,7 +13,7 @@ class CartScreen extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: AppSpacing.pagePadding),
       child: Column(
         children: [
-          CustomAppBarWidget(appBarTitle: 'Your cart'),
+          CustomAppBarWidget(appBarTitle: 'Track Your Order'),
           Expanded(child: Column())
         ],
       ),

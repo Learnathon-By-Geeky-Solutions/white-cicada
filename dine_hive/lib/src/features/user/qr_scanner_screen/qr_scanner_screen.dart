@@ -1,6 +1,5 @@
 import 'package:dine_hive/core/route/app_route_constant.dart';
 import 'package:dine_hive/src/data/providers/cart_screen_provider.dart';
-import 'package:dine_hive/src/data/providers/order_screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -8,104 +7,70 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/theme/src/theme_extensions/color_palette.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
+import '../../../data/providers/qr_scanner_provider.dart';
 
-class QrScannerScreen extends StatefulWidget {
+class QrScannerScreen extends StatelessWidget {
   const QrScannerScreen({super.key});
 
   @override
-  State<QrScannerScreen> createState() => _QrScannerScreenState();
-}
-
-class _QrScannerScreenState extends State<QrScannerScreen> {
-  bool _hasScanned = false;
-  Map<String, String>? _qrData;
-
-  final MobileScannerController _scannerController = MobileScannerController();
-
-  void _onBarcodeScanned(Barcode barcode) {
-    if (_hasScanned) return;
-
-    final rawText = barcode.rawValue;
-    if (rawText != null && rawText.isNotEmpty) {
-      final parsedData = _parseQrText(rawText);
-
-      if (parsedData != null) {
-        setState(() {
-          _hasScanned = true;
-          _qrData = parsedData;
-        });
-
-        // Optional: reset after a delay
-        Future.delayed(const Duration(seconds: 2), () {
-          setState(() => _hasScanned = false);
-        });
-      }
-    }
-  }
-
-  Map<String, String>? _parseQrText(String text) {
-    final tableMatch = RegExp(r'Table:\s*(\d+)').firstMatch(text);
-    final idMatch = RegExp(r'Restaurant Id:\s*(\d+)').firstMatch(text);
-    final nameMatch = RegExp(r'Restaurant Name:\s*(.+)').firstMatch(text);
-
-    if (tableMatch != null && idMatch != null && nameMatch != null) {
-      return {
-        'table': tableMatch.group(1)!,
-        'id': idMatch.group(1)!,
-        'name': nameMatch.group(1)!,
-      };
-    }
-
-    return null;
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          const CustomAppBarWidget(appBarTitle: 'Order Scanner'),
-          Expanded(
-            child: Stack(
+    final MobileScannerController scannerController = MobileScannerController();
+    return ChangeNotifierProvider(
+      create: (_) => QrScannerProvider(),
+      child: Consumer<QrScannerProvider>(
+        builder: (context, scannerProvider, _) {
+          return Scaffold(
+            body: Column(
               children: [
-                MobileScanner(
-                  controller: _scannerController,
-                  onDetect: (capture) {
-                    for (final barcode in capture.barcodes) {
-                      _onBarcodeScanned(barcode);
-                      break;
-                    }
-                  },
-                ),
-
-                _buildOverlay(),
-
-                // Instruction
-                Positioned(
-                  top: MediaQuery.of(context).padding.top + 24,
-                  left: 0,
-                  right: 0,
-                  child: const Center(
-                    child: Text(
-                      'Scan & Order your food from the table',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.whiteColor,
-                        fontWeight: FontWeight.w500,
+                const CustomAppBarWidget(appBarTitle: 'Order Scanner'),
+                Expanded(
+                  child: Stack(
+                    children: [
+                      MobileScanner(
+                        controller: scannerController,
+                        onDetect: (capture) {
+                          for (final barcode in capture.barcodes) {
+                            final text = barcode.rawValue;
+                            if (text != null && text.isNotEmpty) {
+                              scannerProvider.onBarcodeScanned(text);
+                            }
+                            break;
+                          }
+                        },
                       ),
-                      textAlign: TextAlign.center,
-                    ),
+
+                      _buildOverlay(),
+
+                      Positioned(
+                        top: MediaQuery.of(context).padding.top + 24,
+                        left: 0,
+                        right: 0,
+                        child: const Center(
+                          child: Text(
+                            'Scan & Order your food from the table',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.whiteColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+
+                      if (scannerProvider.qrData != null)
+                        _buildScanResultBox(scannerProvider.qrData!, context),
+                    ],
                   ),
                 ),
-
-                if (_qrData != null) _buildScanResultBox(),
               ],
             ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
+
 
   /// Highlight square and dim surroundings
   Widget _buildOverlay() {
@@ -169,7 +134,7 @@ class _QrScannerScreenState extends State<QrScannerScreen> {
   }
 
   /// Shows scanned result with action button
-  Widget _buildScanResultBox() {
+  Widget _buildScanResultBox(Map<String, String> qrData, BuildContext context) {
     return Positioned(
       bottom: 50,
       left: 20,
@@ -184,46 +149,23 @@ class _QrScannerScreenState extends State<QrScannerScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '🪑 Table: ${_qrData!['table']}',
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primaryColor,
-              ),
-            ),
+            Text('🪑 Table: ${qrData['table']}', style: _textStyle),
             const Gap(8),
-            Text(
-              '🏷️ Restaurant ID: ${_qrData!['id']}',
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primaryColor,
-              ),
-            ),
+            Text('🏷️ Restaurant ID: ${qrData['id']}', style: _textStyle),
             const Gap(8),
-            Text(
-              '🍽️ Restaurant Name:\n${_qrData!['name']}',
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primaryColor,
-              ),
-            ),
+            Text('🍽️ Restaurant Name:\n${qrData['name']}', style: _textStyle),
             const Gap(12),
             ElevatedButton(
               onPressed: () {
-                final cartProvider = Provider.of<CartScreenProvider>(context,listen: false);
-                final orderProvider = Provider.of<OrderScreenProvider>(context,listen: false);
-                cartProvider.tableNo = int.parse(_qrData!['table'].toString());
-                cartProvider.restaurantId = _qrData!['id'].toString();
-                context.go(AppRouteConstant.orderScreen);
-                orderProvider.updateIndex(1);
-                orderProvider.updatePage(1);
+                final cartProvider = Provider.of<CartScreenProvider>(context, listen: false);
+                cartProvider.tableNo = int.parse(qrData['table']!);
+                cartProvider.restaurantId = qrData['id']!;
+                cartProvider.restaurantName = qrData['name']!;
+                cartProvider.daySelection(DateTime.now(),DateTime.now());
+                cartProvider.selectedSlot('Now');
+                context.push(AppRouteConstant.orderScreen);
               },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryColor,
-              ),
+              style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor),
               child: const Text('Order Now'),
             ),
           ],
@@ -231,4 +173,11 @@ class _QrScannerScreenState extends State<QrScannerScreen> {
       ),
     );
   }
+
+  TextStyle get _textStyle => const TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primaryColor,
+  );
+
 }
