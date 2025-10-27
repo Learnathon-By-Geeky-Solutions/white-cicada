@@ -40,4 +40,7 @@ class AppImages {
 
   //cart images
   static const orderPattern = 'asset/images/cart_screen/Pattern.png';
+
+  //admin home screen
+
 }

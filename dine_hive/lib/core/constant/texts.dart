@@ -47,4 +47,10 @@ class AppText{
   static const String paymentSuccessful = 'Payment Successfully';
   static const String thankYouForYourOrder = 'Thank you for your order';
   static const String afterPaymentInstructions = '"Your order is now being proceed. We will let you know once it is ready. Check the status of the your order."';
+
+  //Admin Home Screen
+  static const String helloAdmin = 'Hello Admin';
+  static const String search = 'Search';
+  static const String reportBox = 'Report Box';
+  static const String hotelRequest = 'Hotel Request';
 }

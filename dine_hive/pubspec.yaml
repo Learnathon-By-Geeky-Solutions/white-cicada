@@ -87,6 +87,8 @@ flutter:
     - asset/icon/payment_gateway_screen/
     - asset/images/payment_successful_screen/
     - asset/images/cart_screen/
+    - asset/images/admin_home_screen/
+    - asset/images/admin_request_screen/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
